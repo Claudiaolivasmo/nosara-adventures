@@ -1,0 +1,558 @@
+/* ==== RESET GENERAL ==== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ==== BARRA DE NAVEGACIÓN ==== */
+.main-nav {
+  position: sticky;         /* ← hace que se quede fija al hacer scroll */
+  top: 0;                   /* ← se pega al borde superior */
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 2rem;     /* ← aumentamos altura */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  z-index: 999;             /* ← asegura que esté encima de todo */
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+/* Logo centrado */
+.main-nav .logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.main-nav .logo a {
+  text-decoration: none;
+  color: #0a3d62;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+/* Menú a la derecha */
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  position: absolute;
+  right: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav ul li a {
+  text-decoration: none;
+  color: #0a3d62;
+  font-weight: 500;
+  font-size: 1.3em;
+  transition: color 0.3s ease;
+}
+
+.main-nav ul li a:hover {
+  color: #38ada9;
+}
+
+/* ==== HERO (imagen o video de fondo grande) ==== */
+.hero {
+  background-image: url('img-XR788L.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Filtro oscuro */
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  padding: 20px;
+}
+
+.hero-content h1 {
+  font-size: 4em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+.hero-content p {
+  font-size: 1.8em;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+/* ==== FRASE FIJA ==== */
+.frase-fija {
+  padding: 100px 20px 80px;
+  text-align: center;
+}
+
+.frase-fija h2 {
+  font-size: 2.7em;
+  font-weight: 700;
+  color: #0a3d62;
+  letter-spacing: 1px;
+  max-width: 900px;
+  margin: 0 auto 20px;
+}
+
+.frase-fija p {
+  font-size: 1.1em;
+  color: #333;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+
+/* ==== SECCIONES GENERALES ==== */
+.section {
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+
+.section h2 {
+  font-size: 2em;
+  color: #0a3d62;
+  margin-bottom: 10px;
+}
+
+.section p {
+  font-size: 1.1em;
+  color: #333;
+}
+
+/* ==== ÍCONOS FLOTANTES ==== */
+.floating-icons {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 1001;
+}
+
+.floating-icons a {
+  width: 50px;
+  height: 50px;
+  background-color: #25d366;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-size: 24px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.floating-icons a.instagram {
+  background-color: #e4405f;
+}
+
+.floating-icons a:hover {
+  transform: scale(1.1);
+}
+
+/* ==== CARRUSEL DE IMÁGENES ==== */
+.carousel-section {
+  position: relative;
+  padding-top: 80px;
+  margin-bottom: 60px;
+}
+
+.carousel-overlay {
+  position: absolute;
+  top: 10px;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+}
+
+.carousel-overlay h2 {
+  font-size: 2em;
+  color: #0a3d62;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-weight: 700;
+}
+
+.carousel-container {
+  overflow: hidden;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-track img {
+  width: calc((100% - 60px) / 4); /* 4 imágenes con 3 espacios de 20px */
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 12px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.carousel-track img:hover {
+  transform: scale(1.05);
+}
+
+/* ==== PIE DE PÁGINA ==== */
+footer {
+  background-color: #000000;
+  color: #fff;
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 1em;
+  width: 100%;
+}
+/* ==== MODAL ==== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+  text-align: center;
+}
+
+.modal-content h2 {
+  color: #0a3d62;
+  margin-bottom: 10px;
+}
+
+.modal-content p {
+  font-size: 1em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.book-button {
+  background-color: #0a3d62;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.book-button:hover {
+  background-color: #38ada9;
+}
+
+.close {
+  position: absolute;
+  top: 12px;
+  right: 20px;
+  font-size: 28px;
+  color: #888;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #000;
+}
+
+/* ==== RECUADRO VERTICAL PARA ATV ==== */
+.atv-info-box {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.atv-card-vertical {
+  width: 100%;
+  max-width: 400px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.atv-card-vertical img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+.atv-card-vertical h2 {
+  font-size: 1.8em;
+  color: #0a3d62;
+  margin-bottom: 10px;
+}
+
+.atv-card-vertical .price {
+  font-size: 1.3em;
+  color: #38ada9;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.atv-card-vertical .price span {
+  display: block;
+  font-size: 0.9em;
+  color: #777;
+  font-weight: normal;
+}
+
+.atv-card-vertical ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  text-align: left;
+  font-size: 0.95em;
+  color: #333;
+}
+
+.atv-card-vertical ul li {
+  margin-bottom: 10px;
+}
+
+.details-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #0a3d62;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.details-button:hover {
+  background-color: #38ada9;
+}
+
+/* ==== FRASE FIJA DESTACADA ==== */
+.frase-fija {
+  padding: 100px 20px 120px;  /* Ajusta el padding inferior para dar más espacio */
+  text-align: center;
+  margin-bottom: 120px; /* Asegura que la sección tenga espacio suficiente hacia el pie de página */
+}
+
+.frase-fija h2 {
+  font-size: 2.7em;
+  font-weight: 700;
+  color: #0a3d62;
+  letter-spacing: 1px;
+  max-width: 900px;
+  margin: 0 auto 20px;
+}
+
+.frase-fija p {
+  font-size: 1.1em;
+  color: #333;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+
+/* ==== BOOK NOW FORM ==== */
+.book-now h2 {
+  color: #0a3d62;
+  font-size: 2.5em;
+  margin-bottom: 30px;
+}
+
+.booking-form {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #0a3d62;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.form-group.double {
+  display: flex;
+  gap: 20px;
+}
+
+.form-group.double > div {
+  flex: 1;
+}
+
+.checkbox-group label {
+  display: inline-block;
+  margin-right: 20px;
+  font-weight: normal;
+}
+
+.book-button {
+  background-color: #0a3d62;
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  font-size: 1em;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.book-button:hover {
+  background-color: #38ada9;
+}
+
+#confirmation-message {
+  display: none;
+  text-align: center;
+  padding: 40px 20px;
+  min-height: 60vh;
+}
+
+.flatpickr-calendar {
+  font-family: 'Montserrat', sans-serif;
+  z-index: 9999;
+}
+
+.form-group input[type="checkbox"] {
+  display: inline-block;
+  width: auto;
+  margin-right: 10px;
+}
+
+.form-group label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  line-height: 1.4;
+}
+/* ===== HERO VIDEO BACKGROUND ===== */
+.hero-video {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-video video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Texto centrado sobre el video */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.6);
+  padding: 0 1rem;
+}
+
+.hero-title {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+/* ===== ABOUT US SECTION ===== */
+.about-us-content {
+  padding: 4rem 2rem;
+  background-color: #f5f5f5;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.about-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-text p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
