@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nosara Adventures</title>
+
+  <!-- Fuente Montserrat -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Íconos de Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Estilos CSS -->
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles-mobile.css" media="only screen and (max-width: 1048px)">
+
+  <!-- Icóno del menú Hamburguesa -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+  <!-- Barra de navegación -->
+<nav class="main-nav">
+  <div class="logo"><a href="#">Nosara Adventures</a></div>
+<ul class="nav-links">
+  <li><a href="index.html">Home</a></li>
+  <li><a href="book.html">Book Now</a></li>
+  <li><a href="about.html">About Us</a></li>
+</ul>
+<div class="hamburger"><i class="fas fa-bars"></i></div>
+</nav>
+
+<div class="overlay"></div>
+
+
+  <!-- Hero con imagen de fondo -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>ATV Rentals</h1>
+      <p>Explore Nosara your way</p>
+    </div>
+  </section>
+
+<!-- Frase fija -->
+<section class="frase-fija" style="margin-bottom: 1rem;">
+  <h2>Dare to Experience the Magic of One of the World’s Five Blue Zones</h2>
+  <p>From enchanting beaches to the captivating dry forest, immerse yourself in a journey of well-being and natural beauty.</p>
+</section>
+
+<!-- Recuadro vertical para ATV con modal -->
+<section class="section atv-info-box" style="margin-top: 0;">
+  <div class="atv-card-vertical">
+    <img src="img-QZ4312.jpg" alt="Kymco MXU 270i" />
+    <h2>Kymco MXU 270i</h2>
+    <p class="price" style="margin-bottom: 20px;">$60 per day <span>(Weekly & monthly discounts available)</span></p>
+    <button class="details-button" onclick="openModal()">Details</button>
+
+    <!-- Modal dentro del mismo recuadro -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2 style="margin-bottom: 27px;">Reservation Details</h2>
+
+        <!-- Kymco MXU 270i ATV Key Features -->
+        <h3 style="margin-bottom: 20px;">Kymco MXU 270i ATV – Key Features:</h3>
+        <ul style="margin-bottom: 30px;">
+          <li><strong>Perfect for 1 or 2 Riders:</strong> Comfortable for both solo adventurers and pairs.</li>
+          <li><strong>Automatic Transmission:</strong> Easy to ride, no shifting required.</li>
+          <li><strong>270cc Engine:</strong> Reliable power for tackling all types of terrain.</li>
+          <li><strong>All-Terrain Tires:</strong> Ready for dirt, mud, and rocky trails.</li>
+          <li><strong>Comfortable Ride:</strong> Ergonomic design with smooth suspension.</li>
+          <li><strong>Helmet Included:</strong> Stay safe with a free helmet included.</li>
+        </ul>
+
+        <a href="book.html" class="book-button">Book Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Íconos flotantes -->
+  <div class="floating-icons">
+    <a href="https://wa.me/50661444782" target="_blank" class="whatsapp" title="WhatsApp" aria-label="Contact via WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="https://www.instagram.com/nosara_adventures" target="_blank" class="instagram" title="Instagram" aria-label="Visit our Instagram">
+      <i class="fab fa-instagram"></i>
+    </a>
+  </div>
+
+  <!-- Carrusel de imágenes -->
+  <section class="carousel-section">
+    <div class="carousel-overlay">
+      <h2>Your Nosara Adventure Starts Now.</h2>
+    </div>
+
+    <section class="carousel-container">
+      <div class="carousel-track" id="carousel-track">
+        <img src="foto1.jpeg" alt="ATV 1" />
+        <img src="foto2.jpeg" alt="ATV 2" />
+        <img src="foto3.jpeg" alt="ATV 3" />
+        <img src="foto4.jpeg" alt="ATV 4" />
+        <img src="foto5.jpeg" alt="ATV 5" />
+        <img src="foto6.jpeg" alt="ATV 6" />
+
+        <!-- DUPLICADOS para bucle -->
+        <img src="foto1.jpeg" alt="ATV 1" />
+        <img src="foto2.jpeg" alt="ATV 2" />
+        <img src="foto3.jpeg" alt="ATV 3" />
+        <img src="foto4.jpeg" alt="ATV 4" />
+      </div>
+    </section>
+  </section>
+
+  <!-- Pie de página -->
+  <footer>
+    <p>📍 Nosara, Costa Rica | 📞 +506 6144 4782 | ✉️ nosaraadventures@gmail.com</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+
+
+</body>
+
+</html>
+
+

@@ -1,0 +1,128 @@
+/* === OVERLAY GLOBAL (fuera de media query) === */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 999;
+}
+
+.overlay.show {
+  display: block;
+}
+
+/* === MENÚ LATERAL — SIEMPRE A 33vw === */
+.nav-links {
+  position: fixed;
+  top: 0;
+  left: -100%;          /* oculto fuera de pantalla */
+  width: 33vw;
+  min-width: 250px;
+  height: 100vh;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 6rem 3rem 2rem 2.5rem;   /* espacio interior */
+  gap: 0.5rem;                      /* separación entre botones */
+  box-shadow: 2px 0 5px rgba(0,0,0,.2);
+  transition: left .3s ease;
+  z-index: 1000;
+}
+
+.nav-links.show { left: 0; }
+
+.nav-links li { width: 100%; }
+
+.nav-links a {
+  display: block;
+  width: 100%;
+  padding: 0.8rem 1.5rem 0.8rem 1.2rem;   /* ↓ altura interna */
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #0a3d62;
+  transition: color .2s ease;
+}
+
+.nav-links a:hover { color: #38ada9; }
+
+
+/* === SOLO PARA MÓVILES (barra superior) === */
+@media only screen and (max-width: 1048px) {
+  .main-nav {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    padding: 10px 20px;
+    z-index: 1002;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 90px;
+  }
+
+  .main-nav .logo a {
+    font-size: 2rem;
+    font-weight: bold;
+    white-space: nowrap;
+    color: #0a3d62;
+    text-decoration: none;
+    line-height: 1;
+  }
+
+  body.no-scroll .main-nav .logo a {
+    opacity: 1;
+  }
+
+  .hamburger {
+    display: block;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1001;
+    position: relative;
+    transition: opacity 0.3s ease;
+  }
+  .hamburger i {
+  font-size: 2rem;         /* Tamaño del ícono */
+  color: #0a3d62;          /* Cambiá este color a tu gusto */
+  transition: color 0.3s ease;
+}
+
+.hamburger:hover i {
+  color: #38ada9;          /* Color al hacer hover (opcional) */
+}
+
+  body.no-scroll .hamburger {
+    display: none;
+  }
+
+  .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 999;
+  }
+
+  .overlay.show {
+    display: block;
+  }
+}
+
+
+/* === TEXTOS DESTACADOS === */
+.frase-fija h2 {
+  font-size: 2rem;
+}
+
+.frase-fija p {
+  font-size: 1rem;
+}
