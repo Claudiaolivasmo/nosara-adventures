@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", () => {
   // === FORMULARIO (Solo si existe) ===
   const form = document.getElementById("booking-form");
