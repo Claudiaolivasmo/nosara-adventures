@@ -122,7 +122,7 @@ body {
 
 /* ==== FRASE FIJA ==== */
 .frase-fija {
-  padding: 100px 20px 80px;
+  padding: 40px 20px 30px;
   text-align: center;
 }
 
@@ -139,9 +139,13 @@ body {
   font-size: 1.1em;
   color: #333;
   max-width: 800px;
-  margin: 0 auto;
+  margin: 0 auto 1rem auto; /* Aquí está la diferencia */
   line-height: 1.6;
   font-weight: 400;
+}
+
+section.frase-fija p {
+  margin-bottom: 1rem !important;
 }
 
 
@@ -199,56 +203,6 @@ body {
   transform: scale(1.1);
 }
 
-/* ==== CARRUSEL DE IMÁGENES ==== */
-.carousel-section {
-  position: relative;
-  padding-top: 80px;
-  margin-bottom: 60px;
-}
-
-.carousel-overlay {
-  position: absolute;
-  top: 10px;
-  width: 100%;
-  text-align: center;
-  z-index: 10;
-}
-
-.carousel-overlay h2 {
-  font-size: 2em;
-  color: #0a3d62;
-  background-color: rgba(255, 255, 255, 0.8);
-  display: inline-block;
-  padding: 10px 20px;
-  border-radius: 12px;
-  font-weight: 700;
-}
-
-.carousel-container {
-  overflow: hidden;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 60px 20px;
-}
-
-.carousel-track {
-  display: flex;
-  gap: 20px;
-  transition: transform 0.5s ease-in-out;
-}
-
-.carousel-track img {
-  width: calc((100% - 60px) / 4); /* 4 imágenes con 3 espacios de 20px */
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  border-radius: 12px;
-  flex-shrink: 0;
-  transition: transform 0.3s ease;
-}
-
-.carousel-track img:hover {
-  transform: scale(1.05);
-}
 
 /* ==== PIE DE PÁGINA ==== */
 footer {
@@ -391,31 +345,6 @@ footer {
 
 .details-button:hover {
   background-color: #38ada9;
-}
-
-/* ==== FRASE FIJA DESTACADA ==== */
-.frase-fija {
-  padding: 100px 20px 120px;  /* Ajusta el padding inferior para dar más espacio */
-  text-align: center;
-  margin-bottom: 120px; /* Asegura que la sección tenga espacio suficiente hacia el pie de página */
-}
-
-.frase-fija h2 {
-  font-size: 2.7em;
-  font-weight: 700;
-  color: #0a3d62;
-  letter-spacing: 1px;
-  max-width: 900px;
-  margin: 0 auto 20px;
-}
-
-.frase-fija p {
-  font-size: 1.1em;
-  color: #333;
-  max-width: 800px;
-  margin: 0 auto;
-  line-height: 1.6;
-  font-weight: 400;
 }
 
 

@@ -115,14 +115,85 @@
   .overlay.show {
     display: block;
   }
+
+  /* ==== CARRUSEL DE IMÁGENES - MOBILE ==== */
+
+.carousel-section {
+  padding-top: 60px;
+  margin-bottom: 20px;
+}
+
+.carousel-overlay {
+  top: 5px;
+}
+
+.carousel-overlay h2 {
+  font-size: 1.3em;
+  padding: 8px 15px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+}
+
+/* Contenedor deslizable con scroll horizontal */
+.carousel-container {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  padding: 40px 10px;
+}
+
+/* Pista del carrusel en fila horizontal */
+.carousel-track {
+  display: flex;
+  gap: 16px;
+}
+
+/* Estilo de cada imagen del carrusel */
+.carousel-track img {
+  width: 80%; /* Ocupa la mayoría del ancho de la pantalla */
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 12px;
+  flex-shrink: 0;
+  scroll-snap-align: center;
+  transition: transform 0.3s ease;
+}
+
+/* Efecto hover (opcional en mobile, pero suave) */
+.carousel-track img:hover {
+  transform: scale(1.03);
 }
 
 
-/* === TEXTOS DESTACADOS === */
+/* ==== FRASE FIJA ==== */
+.frase-fija {
+  padding: 40px 20px 30px;
+  text-align: center;
+}
+
 .frase-fija h2 {
-  font-size: 2rem;
+  font-size: 2em;
+  font-weight: 700;
+  color: #0a3d62;
+  letter-spacing: 1px;
+  max-width: 900px;
+  margin: 0 auto 20px;
 }
 
 .frase-fija p {
-  font-size: 1rem;
+  font-size: 1em;
+  color: #333;
+  max-width: 800px;
+  margin: 0 auto 1rem auto; /* Aquí está la diferencia */
+  line-height: 1.6;
+  font-weight: 400;
 }
+
+section.frase-fija p {
+  margin-bottom: 1rem !important;
+}
+
+
+}
+
+
