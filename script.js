@@ -80,6 +80,39 @@ if (hamburgerBtn && navLinks && overlay) {
   // Abrir / cerrar al hacer clic en hamburguesa
   hamburgerBtn.addEventListener("click", toggleMenu);
 
+  // Cerrar al hacer clic en un enlace del menú y redirigir con delay
+  navLinks.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault(); // Previene la redirección inmediata
+      const href = link.getAttribute("href");
+      closeMenu(); // Cierra visualmente
+      setTimeout(() => {
+        window.location.href = href; // Redirige después del cierre
+      }, 300); // Tiempo para transición visual
+    });
+  });
+
+  // Cerrar al hacer clic en el fondo oscuro
+  overlay.addEventListener("click", closeMenu);
+}
+
+
+function toggleMenu() {
+  navLinks.classList.toggle("show");
+  overlay.classList.toggle("show");
+  document.body.classList.toggle("no-scroll");
+}
+
+function closeMenu() {
+  navLinks.classList.remove("show");
+  overlay.classList.remove("show");
+  document.body.classList.remove("no-scroll");
+}
+
+if (hamburgerBtn && navLinks && overlay) {
+  // Abrir / cerrar al hacer clic en hamburguesa
+  hamburgerBtn.addEventListener("click", toggleMenu);
+
   // Cerrar al hacer clic en un enlace del menú
   navLinks.querySelectorAll("a").forEach(link => {
     link.addEventListener("click", closeMenu);
