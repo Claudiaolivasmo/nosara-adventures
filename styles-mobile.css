@@ -145,7 +145,19 @@ section.frase-fija p {
   margin-bottom: 1rem !important;
 }
 
+  .recomendaciones {
+    flex-direction: column;
+    text-align: center;
+  }
 
+  .reco-texto {
+    max-width: 100%;
+  }
+
+  .reco-imagen img {
+    max-height: 300px;
+  }
+  
 }
 
 

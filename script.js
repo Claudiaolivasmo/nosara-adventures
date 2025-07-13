@@ -57,6 +57,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+
+  
 // === MENÚ HAMBURGUESA CON OVERLAY ===
 const hamburgerBtn = document.querySelector(".hamburger");
 const navLinks = document.querySelector(".nav-links");
@@ -87,7 +89,14 @@ if (hamburgerBtn && navLinks && overlay) {
   overlay.addEventListener("click", closeMenu);
 }
 
+  const imagenes = ["img1.jpeg", "img2.jpeg", "img3.jpeg", "img4.jpeg", "img5.jpeg"];
+  let indice = 0;
+  const imgElement = document.getElementById("imagen-reco");
 
+  setInterval(() => {
+    indice = (indice + 1) % imagenes.length;
+    imgElement.src = imagenes[indice];
+  }, 4000);
 
   // === FLATPICKR ===
   if (typeof flatpickr !== "undefined") {
