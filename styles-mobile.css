@@ -157,7 +157,26 @@ section.frase-fija p {
   .reco-imagen img {
     max-height: 300px;
   }
-  
+
+    .about-us {
+    flex-direction: column;
+    padding: 40px 5%;
+    text-align: center;
+  }
+
+  .about-texto h2 {
+    font-size: 1.8rem;
+  }
+
+  .about-texto p {
+    font-size: 1rem;
+  }
+
+  .book-button {
+    width: 100%;
+    max-width: 300px;
+  }
+
 }
 
 

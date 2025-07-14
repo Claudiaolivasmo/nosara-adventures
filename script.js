@@ -122,7 +122,7 @@ if (hamburgerBtn && navLinks && overlay) {
   overlay.addEventListener("click", closeMenu);
 }
 
-  const imagenes = ["img1.jpeg", "img2.jpeg", "img3.jpeg", "img4.jpeg", "img5.jpeg"];
+  const imagenes = ["img1.jpeg", "img2.jpeg", "img3.jpeg", "img4.jpeg", "img5.jpeg", "img6.jpeg"];
   let indice = 0;
   const imgElement = document.getElementById("imagen-reco");
 
