@@ -91,6 +91,38 @@
   font-size: 2rem;         /* Tamaño del ícono */
   color: #0a3d62;          /* Cambiá este color a tu gusto */
   transition: color 0.3s ease;
+
+    .recomendaciones {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .reco-texto {
+    max-width: 100%;
+  }
+
+  .reco-imagen img {
+    max-height: 300px;
+  }
+
+    .about-us {
+    flex-direction: column;
+    padding: 40px 5%;
+    text-align: center;
+  }
+
+  .about-texto h2 {
+    font-size: 1.8rem;
+  }
+
+  .about-texto p {
+    font-size: 1rem;
+  }
+
+  .book-button {
+    width: 100%;
+    max-width: 300px;
+  }
 }
 
 .hamburger:hover i {
@@ -145,37 +177,6 @@ section.frase-fija p {
   margin-bottom: 1rem !important;
 }
 
-  .recomendaciones {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .reco-texto {
-    max-width: 100%;
-  }
-
-  .reco-imagen img {
-    max-height: 300px;
-  }
-
-    .about-us {
-    flex-direction: column;
-    padding: 40px 5%;
-    text-align: center;
-  }
-
-  .about-texto h2 {
-    font-size: 1.8rem;
-  }
-
-  .about-texto p {
-    font-size: 1rem;
-  }
-
-  .book-button {
-    width: 100%;
-    max-width: 300px;
-  }
 
 }
 
