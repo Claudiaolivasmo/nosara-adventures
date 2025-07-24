@@ -290,7 +290,7 @@ section.frase-fija p {
 
 .footer-left, .footer-center, .footer-right {
   flex: 1;
-  min-width: 200px;
+  min-width: 0;
 }
 
 
@@ -492,7 +492,7 @@ section.frase-fija p {
 
 .reco-texto {
   flex: 1.4;
-  min-width: 480px;
+  min-width: 0;
   max-width: 850px;
   font-family: var(--font-text);
   color: #333;
@@ -703,7 +703,7 @@ section.frase-fija p {
 
 .location-text {
   flex: 1.4;
-  min-width: 480px;
+  min-width: 0;
   max-width: 850px;
   font-family: var(--font-text);
   color: #333;
