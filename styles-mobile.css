@@ -130,19 +130,37 @@
 }
 
   /* ==== ABOUT US ==== */
-
-    .about-us {
+  .about-us {
     flex-direction: column;
-    padding: 40px 5%;
+    padding: 40px 1.5rem;
+    gap: 2rem;
     text-align: center;
   }
 
+  .about-imagen {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .about-imagen img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .about-texto {
+    width: 100%;
+    max-width: 100%;
+  }
+
   .about-texto h2 {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .about-texto p {
     font-size: 1rem;
+    line-height: 1.6;
   }
 
   .button-outline {

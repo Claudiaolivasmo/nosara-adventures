@@ -160,6 +160,7 @@ h3 {
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-bottom: 15px;
+  font-family: var(--font-title);
 }
 
 .hero-content p {
@@ -423,13 +424,13 @@ section.frase-fija p {
 
 .atv-card-vertical h2 {
   font-family: var(--font-text);
-  font-size: 1.8em;
+  font-size: 1.5em;
   color: #0a3d62;
   margin-bottom: 10px;
 }
 
 .atv-card-vertical .price {
-  font-size: 1.7em;
+  font-size: 1.5em;
   font-weight: bold;
   color: #0a3d62;
   margin-bottom: 20px;
@@ -625,7 +626,7 @@ section.frase-fija p {
 
 
 /* ===== ABOUT US SECTION ===== */
-/* === Sección About Us === */
+
 .about-us {
   display: flex;
   align-items: center;
