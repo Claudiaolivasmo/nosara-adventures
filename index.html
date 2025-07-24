@@ -3,6 +3,7 @@
 <html lang="es">
 
 <head>
+
   <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -22,8 +23,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   <title>Nosara Adventures | ATV Rental in Nosara, Costa Rica</title>
 
-  <!-- Fuente Montserrat -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Fuente  -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+
 
   <!-- Íconos de Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -82,8 +84,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="atv-card-vertical">
     <img src="img-QZ4312.jpg" alt="Kymco MXU 270i" />
     <h2>Kymco MXU 270i</h2>
-    <p class="price" style="margin-bottom: 20px;">$50 per day <span>(Weekly & monthly discounts available)</span></p>
-    <button class="details-button" onclick="openModal()">Details</button>
+    <p class="price" style="margin-bottom: 20px;">
+  <span>(Weekly & monthly discounts available)</span> $50 per day</p>
+
+    <button class="button-outline" onclick="openModal()">Details</button>
 
     <!-- Modal dentro del mismo recuadro -->
     <div id="modal" class="modal">
@@ -102,22 +106,50 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <li><strong>Helmet Included:</strong> Stay safe with a free helmet included.</li>
         </ul>
 
-        <a href="book.html" class="book-button">Book Now</a>
+        <a href="book.html" class="button-outline">Book Now</a>
       </div>
     </div>
   </div>
 </section>
 
 <section class="recomendaciones">
-  <div class="reco-imagen">
-    <img id="imagen-reco" src="img1.jpeg" alt="ATV en Nosara">
-  </div>
-  <div class="reco-texto">
-    <h2>Dare to Experience the Magic of One of the World’s Five Blue Zones</h2>
-    <p>From enchanting beaches to the captivating dry forest, immerse yourself in a journey of well being and natural beauty.</p>
-    <a href="book.html" class="book-button">Book Now</a>
+  <div class="reco-container">
+    <div class="reco-imagen">
+      <img id="imagen-reco" src="img1.jpeg" alt="ATV en Nosara">
+    </div>
+    <div class="reco-texto">
+      <h2>Dare to Experience the Magic of One of the World’s Five Blue Zones</h2>
+      <p>From enchanting beaches to the captivating dry forest, immerse yourself in a journey of well being and natural beauty.</p>
+      <a href="book.html" class="button-outline">Book Now</a>
+    </div>
   </div>
 </section>
+
+
+
+<!-- Section: Location -->
+<section class="location-section" id="location">
+  <div class="location-content">
+    <div class="location-text">
+      <h2>Location</h2>
+      <p>
+        While we don't operate from a physical storefront, Nosara Adventures offers convenient delivery of ATVs throughout the Nosara area. Whether you're at a hotel, Airbnb or at beach, we’ll bring the adventure directly to your location.
+      </p>
+    </div>
+    <div class="map-container">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1389.3913204104558!2d-85.66716625969644!3d9.951248638789489!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sde!2scr!4v1753236857768!5m2!1sen!2scr" 
+        width="100%" 
+        height="100%" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+</section>
+
 
 
   <!-- Íconos flotantes -->
@@ -130,10 +162,37 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </a>
   </div>
 
-  <!-- Pie de página -->
-  <footer>
-    <p>📍 Nosara, Costa Rica | 📞 +506 6144 4782 | ✉️ nosaraadventures@gmail.com</p>
-  </footer>
+<!-- Pie de página -->
+<footer class="footer">
+  <div class="footer-content">
+
+    <div class="footer-left">
+      <p>&copy; 2025 Nosara Adventures<br>Nosara · Costa Rica</p>
+
+    </div>
+
+    <div class="footer-center">
+      <h4>Link</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="book.html">Book Now</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-right">
+      <h4>Contact</h4>
+      <p>nosaraadventures@gmail.com</p>
+      <p>+506 6144 4782</p>
+      <p>
+        <a href="https://www.instagram.com/nosara_adventures" target="_blank">Instagram</a>
+      </p>
+    </div>
+
+  </div>
+</footer>
+
+
 
   <!-- JavaScript -->
   <script src="script.js"></script>
