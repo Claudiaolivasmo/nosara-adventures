@@ -96,11 +96,14 @@
 
   /* ==== RECOMENDACIONES ==== */
   .reco-container {
-    flex-direction: column;
-    align-items: center;
-    padding: 0 2rem;
-    text-align: center;
-  }
+  flex-direction: column;
+  align-items: center;
+  padding: 0 1rem;
+  gap: 2rem;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
 
   .reco-texto h2 {
     font-size: 2rem;
@@ -112,14 +115,14 @@
 
   .reco-imagen {
   width: 100%;
-  max-width: 600px;
   display: flex;
   justify-content: center;
 }
 
 .reco-imagen img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
+  max-width: 600px;
   object-fit: cover;
 }
 
@@ -175,10 +178,14 @@
 
     /* ==== LOCATION SECTION ==== */
   .location-content {
-    flex-direction: column;
-    padding: 0;
-    gap: 2rem;
-  }
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 0 1rem;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
 
   .location-text h2 {
     font-size: 2rem;
@@ -191,10 +198,12 @@
   }
 
   .map-container {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    max-width: 100%;
-  }
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
 
 
   /* ==== FOOT SECTION ==== */
