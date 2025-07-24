@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book Now – Nosara Adventures</title>
+
+  <!-- Fuente -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Íconos -->
+  <!-- intl-tel-input CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@17/build/css/intlTelInput.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Estilos CSS -->
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles-mobile.css" media="only screen and (max-width: 1048px)">
+
+  <!-- Icóno del menú Hamburguesa -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Favicon -->
+   <link rel="icon" href="favicon.png" type="image/png">
+   
+</head>
+<body>
+<!-- Barra de navegación -->
+<nav class="main-nav">
+  <div class="logo"><a href="index.html">Nosara Adventures</a></div>
+<ul class="nav-links">
+  <li><a href="index.html">Home</a></li>
+  <li><a href="book.html">Book Now</a></li>
+  <li><a href="about.html">About Us</a></li>
+</ul>
+<div class="hamburger"><i class="fas fa-bars"></i></div>
+</nav>
+
+<div class="overlay"></div>
+
+<section class="rental-policies">
+  <div class="policies-container">
+    <h2>ATV Rental Terms and Conditions</h2>
+
+    <p>By signing this agreement, the client confirms they have read, understood, and accepted the terms and conditions below. If the client disagrees with any of the clauses, they must refrain from using the rental service.</p>
+
+    <h3>1. Client Requirements</h3>
+    <ul>
+      <li>Must be at least 18 years old.</li>
+      <li>Present a valid driver's license.</li>
+      <li>Present a valid ID (passport or national ID).</li>
+      <li>Sign a liability waiver before the rental begins.</li>
+    </ul>
+
+    <h3>2. Use of the ATV</h3>
+    <ul>
+      <li>The ATV is to be used strictly for recreational purposes in safe conditions.</li>
+      <li>Only the person who signed the rental agreement is authorized to drive the ATV. Subleasing or sharing the vehicle is not allowed.</li>
+    </ul>
+
+    <h3>3. Rental Conditions</h3>
+    <ul>
+      <li>The rental period starts at the time of delivery and ends on the agreed date and time.</li>
+      <li>The ATV must be returned in the same condition it was received, considering normal wear and tear.</li>
+      <li>The client is responsible for any damage and agrees to cover the cost of repairs or replacement.</li>
+    </ul>
+
+    <h3>4. Safety</h3>
+    <ul>
+      <li>Use of safety equipment, such as a helmet, is mandatory at all times.</li>
+      <li>The client agrees to obey all traffic laws and act responsibly while operating the vehicle.</li>
+    </ul>
+
+    <h3>5. Liability</h3>
+    <ul>
+      <li>The rental company is not responsible for any accidents, injuries, third-party damages, or property loss during the rental period.</li>
+      <li>The client is fully responsible for any damage caused by negligence or misuse, including repair or replacement costs.</li>
+      <li>In case of theft or loss, the client agrees to cover the full value of the ATV.</li>
+    </ul>
+
+    <h3>6. Insurance</h3>
+    <ul>
+      <li>The client may choose to purchase additional insurance offered by the company. If not purchased, the client is liable for all damages or incidents.</li>
+    </ul>
+
+    <h3>7. Cancellation Policy</h3>
+    <ul>
+      <li>The cancellation policy is provided at the time of booking. No refunds will be issued for no-shows or last-minute cancellations.</li>
+    </ul>
+
+    <h3>8. Breach of Contract</h3>
+    <ul>
+      <li>If the client breaches any of these terms, the company reserves the right to terminate the rental without a refund.</li>
+    </ul>
+
+    <h3>9. Jurisdiction</h3>
+    <ul>
+      <li>This agreement is governed by the laws of Costa Rica. Any disputes will be handled in the courts of San José, Costa Rica.</li>
+    </ul>
+
+    <h3>10. Modifications</h3>
+    <ul>
+      <li>The company reserves the right to modify these terms at any time. Clients will be notified of any changes prior to their rental.</li>
+    </ul>
+
+    <p class="signature-line">By proceeding, I confirm that I have read, understood, and accepted these terms and conditions.</p>
+  </div>
+</section>
+
+
+
+  <!-- Pie de página -->
+<footer class="footer">
+  <div class="footer-content">
+
+    <div class="footer-left">
+      <p>&copy; 2025 Nosara Adventures<br>Nosara · Costa Rica</p>
+
+    </div>
+
+    <div class="footer-center">
+      <h4>Link</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="book.html">Book Now</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-right">
+      <h4>Contact</h4>
+      <p>nosaraadventures@gmail.com</p>
+      <p>+506 6144 4782</p>
+      <p>
+        <a href="https://www.instagram.com/nosara_adventures" target="_blank">Instagram</a>
+      </p>
+    </div>
+
+  </div>
+</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="script.js"></script>
+  <!-- intl-tel-input JS -->
+  <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@17/build/js/intlTelInput.min.js"></script>
+
+<script>
+  const input = document.querySelector("#phone");
+  const iti = window.intlTelInput(input, {
+    initialCountry: "auto",
+    geoIpLookup: callback => {
+      fetch("https://ipinfo.io?token=YOUR_TOKEN_HERE") // puedes dejarlo en "cr" si prefieres
+        .then(resp => resp.json())
+        .then(resp => callback(resp.country))
+        .catch(() => callback("us"));
+    },
+    utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@17/build/js/utils.js", // para formateo y validación
+  });
+</script>
+
+</body>
+</html>
