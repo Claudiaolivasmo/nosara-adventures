@@ -139,24 +139,6 @@
   </div>
 </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <script src="script.js"></script>
-  <!-- intl-tel-input JS -->
-  <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@17/build/js/intlTelInput.min.js"></script>
-
-<script>
-  const input = document.querySelector("#phone");
-  const iti = window.intlTelInput(input, {
-    initialCountry: "auto",
-    geoIpLookup: callback => {
-      fetch("https://ipinfo.io?token=YOUR_TOKEN_HERE") // puedes dejarlo en "cr" si prefieres
-        .then(resp => resp.json())
-        .then(resp => callback(resp.country))
-        .catch(() => callback("us"));
-    },
-    utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@17/build/js/utils.js", // para formateo y validación
-  });
-</script>
-
 </body>
 </html>
