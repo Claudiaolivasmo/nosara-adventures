@@ -19,8 +19,8 @@
   position: fixed;
   top: 0;
   left: -100%;          /* oculto fuera de pantalla */
-  width: 33vw;
-  min-width: 250px;
+  width: 80vw;
+  max-width: 300px;
   height: 100vh;
   background-color: white;
   display: flex;
