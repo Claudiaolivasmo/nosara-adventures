@@ -21,6 +21,7 @@
   left: -100%;          /* oculto fuera de pantalla */
   width: 80vw;
   max-width: 300px;
+  min-width: unset;
   height: 100vh;
   background-color: white;
   display: flex;
@@ -96,14 +97,16 @@
 
   /* ==== RECOMENDACIONES ==== */
   .reco-container {
+  display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 1rem;
   gap: 2rem;
+  padding: 0 1rem;
   width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
+  box-sizing: border-box;
 }
+
+
 
   .reco-texto h2 {
     font-size: 2rem;
@@ -178,14 +181,16 @@
 
     /* ==== LOCATION SECTION ==== */
   .location-content {
+  display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
   gap: 2rem;
-  padding: 0 1rem;
   width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
+  padding: 0 1rem;
+  box-sizing: border-box;
 }
+
 
   .location-text h2 {
     font-size: 2rem;
@@ -298,5 +303,4 @@
 section.frase-fija p {
   margin-bottom: 1rem !important;
 }
-
 
