@@ -59,34 +59,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   
-  // === MENÚ HAMBURGUESA ===
+
+
 // === MENÚ HAMBURGUESA ===
-const hamburgerBtn = document.querySelector(".hamburger");
-const navLinks = document.querySelector(".nav-links");
-const overlay = document.querySelector(".overlay");
+const hamburger = document.getElementById("hamburger");
+const mobileMenu = document.getElementById("mobileMenu");
+const overlay = document.getElementById("overlay");
 
-function toggleMenu() {
-  const isOpen = navLinks.classList.contains("show");
-  navLinks.classList.toggle("show");
+hamburger.addEventListener("click", () => {
+  console.log("✅ Clic en el botón hamburguesa");
+
+  hamburger.classList.toggle("open");
+  mobileMenu.classList.toggle("open");
   overlay.classList.toggle("show");
-  document.body.classList.toggle("no-scroll", !isOpen);
-}
+  document.body.classList.toggle("no-scroll");
 
-function closeMenu() {
-  navLinks.classList.remove("show");
+  // ✅ Actualiza el atributo aria-expanded para accesibilidad
+  hamburger.setAttribute("aria-expanded", hamburger.classList.contains("open"));
+});
+
+overlay.addEventListener("click", () => {
+  hamburger.classList.remove("open");
+  mobileMenu.classList.remove("open");
   overlay.classList.remove("show");
   document.body.classList.remove("no-scroll");
-}
 
-if (hamburgerBtn && navLinks && overlay) {
-  hamburgerBtn.addEventListener("click", toggleMenu);
+  // ✅ Cierra el estado accesible también
+  hamburger.setAttribute("aria-expanded", "false");
+});
 
-  navLinks.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", closeMenu);
-  });
-
-  overlay.addEventListener("click", closeMenu);
-}
 
 
   const imagenes = ["img1.jpeg", "img2.jpeg", "img3.jpeg", "img4.jpeg", "img5.jpeg", "img6.jpeg"];
@@ -150,4 +151,5 @@ if (hamburgerBtn && navLinks && overlay) {
 
     setInterval(moveCarousel, moveEveryMs);
   }
+
 });
