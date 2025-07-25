@@ -470,7 +470,7 @@ section.frase-fija p {
   gap: 4rem;
   max-width: 1400px;
   margin: 0 auto; /* Centrado en la página */
-  padding: 0 4rem;
+  padding: 0 1rem;
   text-align: left;
 }
 
@@ -699,7 +699,7 @@ section.frase-fija p {
   gap: 4rem;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 4rem;
+  padding: 0 1rem;
 }
 
 .location-text {
