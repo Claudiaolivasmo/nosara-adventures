@@ -60,39 +60,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   
   // === MENÚ HAMBURGUESA ===
-  const hamburgerBtn = document.querySelector(".hamburger");
-  const navLinks = document.querySelector(".nav-links");
-  const overlay = document.querySelector(".overlay");
-
-  function toggleMenu() {
-    navLinks.classList.toggle("show");
-    overlay.classList.toggle("show");
-    document.body.classList.toggle("no-scroll");
-  }
-
-  function closeMenu() {
-    navLinks.classList.remove("show");
-    overlay.classList.remove("show");
-    document.body.classList.remove("no-scroll");
-  }
-
-  if (hamburgerBtn && navLinks && overlay) {
-    hamburgerBtn.addEventListener("click", toggleMenu);
-
-    navLinks.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
-        closeMenu();
-      });
-    });
-
-    overlay.addEventListener("click", closeMenu);
-  }
-
+// === MENÚ HAMBURGUESA ===
+const hamburgerBtn = document.querySelector(".hamburger");
+const navLinks = document.querySelector(".nav-links");
+const overlay = document.querySelector(".overlay");
 
 function toggleMenu() {
+  const isOpen = navLinks.classList.contains("show");
   navLinks.classList.toggle("show");
   overlay.classList.toggle("show");
-  document.body.classList.toggle("no-scroll");
+  document.body.classList.toggle("no-scroll", !isOpen);
 }
 
 function closeMenu() {
@@ -102,17 +79,15 @@ function closeMenu() {
 }
 
 if (hamburgerBtn && navLinks && overlay) {
-  // Abrir / cerrar al hacer clic en hamburguesa
   hamburgerBtn.addEventListener("click", toggleMenu);
 
-  // Cerrar al hacer clic en un enlace del menú
   navLinks.querySelectorAll("a").forEach(link => {
     link.addEventListener("click", closeMenu);
   });
 
-  // Cerrar al hacer clic en el fondo oscuro
   overlay.addEventListener("click", closeMenu);
 }
+
 
   const imagenes = ["img1.jpeg", "img2.jpeg", "img3.jpeg", "img4.jpeg", "img5.jpeg", "img6.jpeg"];
   let indice = 0;
