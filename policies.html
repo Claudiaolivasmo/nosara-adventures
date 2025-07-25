@@ -25,18 +25,42 @@
    
 </head>
 <body>
-<!-- Barra de navegación -->
-<nav class="main-nav">
-  <div class="logo"><a href="index.html">Nosara Adventures</a></div>
-<ul class="nav-links">
-  <li><a href="index.html">Home</a></li>
-  <li><a href="book.html">Book Now</a></li>
-  <li><a href="about.html">About Us</a></li>
-</ul>
-<div class="hamburger"><i class="fas fa-bars"></i></div>
+<!-- ✅ NAV DESKTOP -->
+<nav class="desktop-nav">
+  <div class="main-nav-inner">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="book.html">Book Now</a></li>
+      <li><a href="about.html">About Us</a></li>
+    </ul>
+    <div class="logo">
+      <a href="index.html">Nosara Adventures</a>
+    </div>
+  </div>
 </nav>
 
-<div class="overlay"></div>
+<!-- ✅ NAV MOBILE -->
+<nav class="mobile-nav">
+  <div class="logo">
+    <a href="index.html">Nosara Adventures</a>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
+  <span class="icon" aria-hidden="true"></span>
+</button>
+
+</nav>
+
+<!-- ✅ MENÚ DESPLEGABLE -->
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="book.html">Book Now</a></li>
+    <li><a href="about.html">About Us</a></li>
+  </ul>
+</div>
+<div class="overlay" id="overlay"></div>
+
+
 
 <section class="rental-policies">
   <div class="policies-container">
