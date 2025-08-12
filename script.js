@@ -5,6 +5,23 @@ document.addEventListener("DOMContentLoaded", () => {
   const submitBtn = document.getElementById("submit-btn");
   const termsCheckbox = document.getElementById("terms");
   const confirmationMessage = document.getElementById("confirmation-message");
+  // === ANIMACIÓN AL SCROLLEAR ===
+  const fadeElements = document.querySelectorAll('.fade-in');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        // Si quieres que solo se ejecute una vez:
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.2 // porcentaje del elemento visible antes de activar la animación
+  });
+
+  fadeElements.forEach(el => observer.observe(el));
+
 
   if (form && submitBtn && termsCheckbox && confirmationMessage) {
     const requiredFields = ["first-name", "email", "phone", "quantity", "terms"];
