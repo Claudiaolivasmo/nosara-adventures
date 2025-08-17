@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book Your Surf Lesson – Nosara Adventures</title>
+
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Librerías CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@17/build/css/intlTelInput.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/material_blue.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Estilos del sitio -->
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/styles-mobile.css" media="only screen and (max-width: 1048px)" />
+  <link rel="stylesheet" href="styles/book.css">
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.png" type="image/png">
+</head>
+
+<body>
+
+<!-- NAV ESCRITORIO -->
+<nav class="desktop-nav">
+  <div class="main-nav-inner">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li class="nav-item nav-dropdown">
+        <button class="btn-booknow" aria-haspopup="true" aria-expanded="false">
+          Book Now <span class="chev">▾</span>
+        </button>
+        <div class="dropdown-panel" role="menu">
+          <a href="book.html" class="drop-item" role="menuitem">
+            <div class="drop-text"><span class="drop-title">Rent an ATV</span></div>
+          </a>
+          <a href="book-surf.html" class="drop-item" role="menuitem">
+            <div class="drop-text"><span class="drop-title">Private Surf Lessons</span></div>
+          </a>
+        </div>
+      </li>
+    </ul>
+    <div class="logo"><a href="index.html">Nosara Adventures</a></div>
+  </div>
+</nav>
+
+<!-- NAV MÓVIL -->
+<nav class="mobile-nav" aria-label="Mobile">
+  <div class="logo"><a href="index.html">Nosara Adventures</a></div>
+
+  <button id="mobile-menu-button"
+          class="hamburger"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+          aria-controls="mobile-menu">
+    <span class="bars" aria-hidden="true"></span>
+  </button>
+
+  <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+    <div class="menu-inner">
+      <a href="index.html" class="menu-item">Home</a>
+      <a href="about.html" class="menu-item">About us</a>
+      <div class="menu-group">
+        <button id="mobile-dropdown-button"
+                class="menu-cta"
+                aria-expanded="false"
+                aria-controls="mobile-dropdown-menu">
+          Book Now
+        </button>
+        <div id="mobile-dropdown-menu" class="dropdown" aria-hidden="true">
+          <a href="book.html" class="submenu-item">Rent an ATV</a>
+          <a href="book-surf.html" class="submenu-item">Private Surf Lessons</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="mobile-overlay" class="overlay" aria-hidden="true"></div>
+</nav>
+
+<!-- POLICIES / TERMS FOR SURF LESSONS -->
+<section class="rental-policies">
+  <div class="policies-container">
+    <h2>Surf Lesson Terms and Conditions</h2>
+
+    <p>By booking a surf lesson with Nosara Adventures, the client confirms they have read, understood, and accepted the following terms and conditions. If the client disagrees with any clause, they must refrain from booking the service.</p>
+
+    <h3>1. Client Requirements</h3>
+    <ul>
+      <li>Minimum recommended age: 6 years. Minors must be accompanied by a parent or legal guardian who signs the waiver.</li>
+      <li>Reasonable physical condition and ability to swim unassisted for at least 50 meters.</li>
+      <li>Signing of the liability waiver prior to the lesson.</li>
+    </ul>
+
+    <h3>2. Safety & Ocean Conditions</h3>
+    <ul>
+      <li>Lessons are subject to ocean conditions (swell, tides, wind, storms). For safety reasons, the instructor may modify time, location, or cancel the session.</li>
+      <li>Clients must follow the instructor’s guidance at all times. Failure to comply may result in the lesson being terminated without refund.</li>
+      <li>Use of rashguard and zinc sunscreen is recommended. If needed, boards and leashes are included as specified at booking.</li>
+    </ul>
+
+    <h3>3. Lesson Format</h3>
+    <ul>
+      <li>Lesson types: Private (1–2 people), Semi-private, or Group (sizes may vary).</li>
+      <li>Start time and meeting point will be confirmed by message the day before based on tides and conditions.</li>
+    </ul>
+
+    <h3>4. Client Responsibilities</h3>
+    <ul>
+      <li>Arrive on time with water, sun protection, and personal medication (if applicable).</li>
+      <li>Inform the team of any injuries or medical conditions before the lesson.</li>
+      <li>Respect other surfers and beach users; follow local surf etiquette.</li>
+    </ul>
+
+    <h3>5. Equipment</h3>
+    <ul>
+      <li>Boards and leashes provided by Nosara Adventures must be used responsibly and returned in the same condition (normal wear and tear excepted).</li>
+      <li>Damage due to negligence may incur repair or replacement fees.</li>
+    </ul>
+
+    <h3>6. Cancellations & No-Shows</h3>
+    <ul>
+      <li>Free reschedule or refund if the lesson is canceled by the company due to unsafe conditions.</li>
+      <li>Client cancellations: please refer to the <a href="policies.html" target="_blank">cancellation policy</a> provided at booking. No refunds for no-shows.</li>
+    </ul>
+
+    <h3>7. Liability</h3>
+    <ul>
+      <li>Surfing involves inherent risks. Nosara Adventures is not responsible for accidents, injuries, or property loss beyond legal obligations.</li>
+      <li>By booking, the client acknowledges the risks and agrees to follow safety instructions.</li>
+    </ul>
+
+    <p class="signature-line">By proceeding, I confirm that I have read, understood, and accepted these terms and conditions.</p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-left">
+      <p>&copy; 2025 Nosara Adventures<br>Nosara · Costa Rica</p>
+    </div>
+    <div class="footer-center">
+      <h4>Link</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="book.html">Book Now</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-right">
+      <h4>Contact</h4>
+      <p>nosaraadventures@gmail.com</p>
+      <p>+506 6144 4782</p>
+      <p><a href="https://www.instagram.com/nosara_adventures" target="_blank">Instagram</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- JS: librerías -->
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@17/build/js/intlTelInput.min.js"></script>
+
+<!-- JS del sitio -->
+<script src="js/nav-mobile.js" defer></script>
+<script src="js/util.js" defer></script>
+</body>
+</html>

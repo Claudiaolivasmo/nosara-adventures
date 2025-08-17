@@ -1,0 +1,43 @@
+/* ============ about.css ============ */
+
+.about-us {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  padding: 60px 10%;
+  flex-wrap: wrap;
+}
+
+.about-imagen {
+  flex: 1;
+  max-width: 600px;
+  overflow: hidden;
+}
+
+.about-imagen img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.about-imagen img:hover { transform: scale(1.08); }
+
+.about-texto {
+  flex: 1 1 400px;
+  max-width: 600px;
+}
+
+.about-texto h2 {
+  font-size: 55px;
+  margin-bottom: 20px;
+  color: var(--main-color);
+}
+
+.about-texto p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 15px;
+  color: #333;
+}

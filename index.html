@@ -1,230 +1,231 @@
-
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
-  <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-NGSHPMKC');</script>
-<!-- End Google Tag Manager -->
-
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-NGSHPMKC');</script>
   <meta charset="UTF-8" />
-  <meta name="description" content="Explore Nosara with our top-quality ATV rentals. Nosara Adventures offers trusted, local service and pura vida experiences in Costa Rica. Book now!">
-  <meta name="keywords" content="Nosara, ATV rental, Costa Rica, adventure, outdoor activities, local business, pura vida">
+  <meta name="description" content="ATV rentals and private surf lessons in Nosara, Costa Rica. Flexible delivery, and pura vida experiences. Book ATV or surf today.">
+  <meta name="keywords" content="Nosara private surf lessons Nosara, ATV rental Nosara, Costa Rica adventures">
   <meta name="author" content="Nosara Adventures">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#4CAF50">
   <meta name="robots" content="index, follow">
   <meta name="google-site-verification" content="googleafe9c406c0851725">
-
-  <title>Nosara Adventures | ATV Rental in Nosara, Costa Rica</title>
-
-  <!-- Fuente  -->
+  <title>Nosara Adventures | ATV Rentals & Private Surf Lessons in Nosara, Costa Rica</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
 
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/styles-mobile.css" media="only screen and (max-width: 1048px)" />
+  <link rel="stylesheet" href="styles/index.css">
 
-  <!-- Estilos CSS -->
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="styles-mobile.css" media="only screen and (max-width: 1048px)">
-
-
-  <!-- Icóno del menú Hamburguesa -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" href="images/favicon.png" type="image/png">
 
-  <!-- Favicon -->
-   <link rel="icon" href="favicon.png" type="image/png">
-
+  
 </head>
-
 <body>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NGSHPMKC" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-  <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NGSHPMKC"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
-
-<!-- ✅ NAV DESKTOP -->
+<!-- NAV ESCRITORIO -->
 <nav class="desktop-nav">
   <div class="main-nav-inner">
     <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="book.html">Book Now</a></li>
       <li><a href="about.html">About Us</a></li>
+      <li class="nav-item nav-dropdown">
+        <button class="btn-booknow" aria-haspopup="true" aria-expanded="false">
+          Book Now <span class="chev">▾</span>
+        </button>
+        <div class="dropdown-panel" role="menu">
+          <a href="book.html" class="drop-item" role="menuitem">
+            <div class="drop-text"><span class="drop-title">Rent an ATV</span></div>
+          </a>
+          <a href="book-surf.html" class="drop-item" role="menuitem">
+            <div class="drop-text"><span class="drop-title">Private Surf Lessons</span></div>
+          </a>
+        </div>
+      </li>
+      
     </ul>
-    <div class="logo">
-      <a href="index.html">Nosara Adventures</a>
+    <div class="logo"><a href="index.html">Nosara Adventures</a></div>
+  </div>
+</nav>
+
+<!-- NAV MÓVIL -->
+<nav class="mobile-nav" aria-label="Mobile">
+  <div class="logo"><a href="index.html">Nosara Adventures</a></div>
+
+  <button id="mobile-menu-button"
+          class="hamburger"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+          aria-controls="mobile-menu">
+    <span class="bars" aria-hidden="true"></span>
+  </button>
+
+  <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+    <div class="menu-inner">
+      <a href="index.html" class="menu-item">Home</a>
+      <a href="about.html" class="menu-item">About us</a>
+      <div class="menu-group">
+        <button id="mobile-dropdown-button"
+                class="menu-cta"
+                aria-expanded="false"
+                aria-controls="mobile-dropdown-menu">
+          Book Now
+        </button>
+        <div id="mobile-dropdown-menu" class="dropdown" aria-hidden="true">
+          <a href="book.html" class="submenu-item">Rent an ATV</a>
+          <a href="book-surf.html" class="submenu-item">Private Surf Lessons</a>
+        </div>
+      </div>
+      
     </div>
   </div>
+
+  <div id="mobile-overlay" class="overlay" aria-hidden="true"></div>
 </nav>
 
-<!-- ✅ NAV MOBILE -->
-<nav class="mobile-nav">
-  <div class="logo">
-    <a href="index.html">Nosara Adventures</a>
-  </div>
-  <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
-  <span class="icon" aria-hidden="true"></span>
-</button>
+  <!-- HERO -->
+  <section class="hero" style="background-image: url('images/img-XR788L.jpeg');">
+    <div class="hero-content">
+      <h1 class="fade-in">Nosara Adventures</h1>
+      <p class="fade-in">Explore Nosara your way: ATVs & Private Surf Lessons</p>
+      <div class="hero-ctas fade-in"></div>
+    </div>
+  </section>
 
-</nav>
+  <!-- FRASE FIJA -->
+  <section class="frase-fija">
+    <h2 class="fade-in">ATV Rentals in Nosara, Costa Rica</h2>
+    <p class="fade-in">Nosara Adventures offers high-quality, affordable ATV rentals to explore the beaches, trails, and tropical beauty of Nosara. Whether you're here for surfing, yoga or new experiences, we’ve got the perfect ride for you.</p>
+  </section>
 
-<!-- ✅ MENÚ DESPLEGABLE -->
-<div class="mobile-menu" id="mobileMenu">
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="book.html">Book Now</a></li>
-    <li><a href="about.html">About Us</a></li>
-  </ul>
-</div>
-<div class="overlay" id="overlay"></div>
+  <!-- ATV -->
+  <section id="atv" class="section atv-info-box fade-in" style="margin-top: 0;">
+    <div class="atv-card-vertical fade-in">
+      <img src="images/img-QZ4312.jpg" alt="Kymco MXU 270i" />
+      <h2>Kymco MXU 270i</h2>
+      <p class="price" style="margin-bottom: 20px;"><span>(Weekly & monthly discounts available)</span> $50 per day</p>
+      <button class="button-outline" onclick="openModal()">Details</button>
+    </div>
+  </section>
 
-
-
-  <!-- Hero con imagen de fondo -->
-<section class="hero">
-  <div class="hero-content">
-    <h1 class="fade-in">ATV Rentals</h1>
-    <p class="fade-in">Explore Nosara your way</p>
-  </div>
-</section>
-
-
-<!-- Frase fija -->
-<section class="frase-fija">
-  <h2 class="fade-in">ATV Rentals in Nosara, Costa Rica</h2>
-  <p class="fade-in">Nosara Adventures offers high-quality, affordable ATV rentals to explore the beaches, trails, and tropical beauty of Nosara. Whether you're here for surfing, yoga or new experiences, we’ve got the perfect ride for you.</p>
-</section>
-
-
-
-<!-- Recuadro vertical para ATV con modal -->
-<section class="section atv-info-box fade-in" style="margin-top: 0;">
-  <div class ="atv-card-vertical fade-in">
-    <img src="img-QZ4312.jpg" alt="Kymco MXU 270i" />
-    <h2>Kymco MXU 270i</h2>
-    <p class="price" style="margin-bottom: 20px;">
-  <span>(Weekly & monthly discounts available)</span> $50 per day</p>
-
-    <button class="button-outline" onclick="openModal()">Details</button>
-
-    <!-- Modal dentro del mismo recuadro -->
-    <div id="modal" class="modal">
-      <div class="modal-content">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <h2 style="margin-bottom: 27px;">Reservation Details</h2>
-
-        <!-- Kymco MXU 270i ATV Key Features -->
-        <h3 style="margin-bottom: 20px;">Kymco MXU 270i ATV – Key Features:</h3>
-        <ul style="margin-bottom: 30px;">
-          <li><strong>Perfect for 1 or 2 Riders:</strong> Comfortable for both solo adventurers and pairs.</li>
-          <li><strong>Automatic Transmission:</strong> Easy to ride, no shifting required.</li>
-          <li><strong>270cc Engine:</strong> Reliable power for tackling all types of terrain.</li>
-          <li><strong>All-Terrain Tires:</strong> Ready for dirt, mud, and rocky trails.</li>
-          <li><strong>Comfortable Ride:</strong> Ergonomic design with smooth suspension.</li>
-          <li><strong>Helmet Included:</strong> Stay safe with a free helmet included.</li>
-        </ul>
-
-        <a href="book.html" class="button-outline">Book Now</a>
+  <!-- SURF -->
+  <section id="surf" class="section surf-info-box fade-in" style="margin-top: 2rem;">
+    <div class="surf-container">
+      <div class="surf-text fade-in">
+        <h2>Private Surf Lessons</h2>
+        <p>Learn to ride the waves in one of Costa Rica’s top surf destinations.
+        We provide personalized lessons for first time to intermediate surfers.
+        Each session includes a surfboard, rash guard and is timed with the best tides 
+        for a safe and fun experience.</p>
+        <button class="button-outline" onclick="openSurfModal()">Details</button>
+      </div>
+      <div class="surf-media fade-in" aria-label="Private Surf Lessons video">
+        <figure class="surf-video">
+          <video id="surf-video" class="v9x16" playsinline muted loop preload="metadata">
+            <source src="surf-video.MOV" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <button class="play-toggle" aria-controls="surf-video" aria-label="Play video">▶</button>
+        </figure>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="recomendaciones fade-in">
-  <div class="reco-container">
-    <div class="reco-imagen fade-in">
-      <img id="imagen-reco" src="img1.jpeg" alt="ATV en Nosara">
+  <!-- RECOMENDACIONES -->
+  <section class="recomendaciones fade-in">
+    <div class="reco-container">
+      <div class="reco-imagen fade-in"><img id="imagen-reco" src="images/img1.jpeg" alt="ATV en Nosara"></div>
+      <div class="reco-texto fade-in">
+        <h2>Dare to Experience the Magic of One of the World’s Five Blue Zones</h2>
+        <p>From enchanting beaches to the captivating dry forest, immerse yourself in a journey of well being and natural beauty.</p>
+      </div>
     </div>
-    <div class="reco-texto fade-in">
-      <h2>Dare to Experience the Magic of One of the World’s Five Blue Zones</h2>
-      <p>From enchanting beaches to the captivating dry forest, immerse yourself in a journey of well being and natural beauty.</p>
+  </section>
+
+  <!-- LOCATION -->
+  <section class="location-section fade-in" id="location">
+    <div class="location-content">
+      <div class="location-text fade-in">
+        <h2>Location</h2>
+        <p>While we don't operate from a physical storefront, Nosara Adventures offers convenient delivery of ATVs throughout the Nosara area. Whether you're at a hotel, Airbnb or at beach, we’ll bring the adventure directly to your location.</p>
+      </div>
+      <div class="map-container">
+        <iframe title="Google Map of Nosara, Costa Rica" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1389.3913204104558!2d-85.66716625969644!3d9.951248638789489!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sde!2scr!4v1753236857768!5m2!1sen!2scr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODALES -->
+  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-content">
+      <button class="close" aria-label="Close" onclick="closeModal()">×</button>
+      <h2 style="margin-bottom: 27px;">Reservation Details</h2>
+      <h3 style="margin-bottom: 20px;">Kymco MXU 270i ATV – Key Features:</h3>
+      <ul style="margin-bottom: 30px;">
+        <li><strong>Perfect for 1 or 2 Riders:</strong> Comfortable for both solo adventurers and pairs.</li>
+        <li><strong>Automatic Transmission:</strong> Easy to ride, no shifting required.</li>
+        <li><strong>270cc Engine:</strong> Reliable power for tackling all types of terrain.</li>
+        <li><strong>All-Terrain Tires:</strong> Ready for dirt, mud, and rocky trails.</li>
+        <li><strong>Comfortable Ride:</strong> Ergonomic design with smooth suspension.</li>
+        <li><strong>Helmet Included:</strong> Stay safe with a free helmet included.</li>
+      </ul>
       <a href="book.html" class="button-outline">Book Now</a>
     </div>
   </div>
-</section>
 
-
-
-<!-- Section: Location -->
-<section class="location-section fade-in" id="location">
-  <div class="location-content">
-    <div class="location-text fade-in">
-      <h2>Location</h2>
-      <p>
-        While we don't operate from a physical storefront, Nosara Adventures offers convenient delivery of ATVs throughout the Nosara area. Whether you're at a hotel, Airbnb or at beach, we’ll bring the adventure directly to your location.
-      </p>
-    </div>
-    <div class="map-container">
-      <iframe 
-        title="Google Map of Nosara, Costa Rica"
-        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1389.3913204104558!2d-85.66716625969644!3d9.951248638789489!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sde!2scr!4v1753236857768!5m2!1sen!2scr" 
-        width="100%" 
-        height="100%" 
-        style="border:0;" 
-        allowfullscreen="" 
-        loading="lazy" 
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
+  <div id="surfModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-content">
+      <button class="close" aria-label="Close" onclick="closeSurfModal()">×</button>
+      <h2 style="margin-bottom: 24px;">Private Surf Lessons – Details</h2>
+      <h3 style="margin-bottom: 16px;">What’s included:</h3>
+      <p><strong>1:1 or 1:2 coaching</strong> with certified instructors.</p>
+      <p><strong>Board & rash guard</strong> included.</p>
+      <p><strong>60–90 min session</strong> (beginner to intermediate).</p>
+      <p>Land warm-up, <strong>ocean safety</strong> & fundamentals.</p>
+      <a href="book.html?service=surf" class="button-outline" onclick="trackBook('Surf','Modal')">Book Now</a>
     </div>
   </div>
-</section>
 
-
-
-  <!-- Íconos flotantes -->
+  <!-- ICONOS FLOTANTES -->
   <div class="floating-icons">
-    <a href="https://wa.me/50661444782" target="_blank" class="whatsapp" title="WhatsApp" aria-label="Contact via WhatsApp">
-      <i class="fab fa-whatsapp"></i>
-    </a>
-    <a href="https://www.instagram.com/nosara_adventures" target="_blank" class="instagram" title="Instagram" aria-label="Visit our Instagram">
-      <i class="fab fa-instagram"></i>
-    </a>
+    <a href="https://wa.me/50661444782" target="_blank" class="whatsapp" title="WhatsApp" aria-label="Contact via WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://www.instagram.com/nosara_adventures" target="_blank" class="instagram" title="Instagram" aria-label="Visit our Instagram"><i class="fab fa-instagram"></i></a>
   </div>
 
-<!-- Pie de página -->
-<footer class="footer">
-  <div class="footer-content">
-
-    <div class="footer-left">
-      <p>&copy; 2025 Nosara Adventures<br>Nosara · Costa Rica</p>
-
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-left">
+        <p>© 2025 Nosara Adventures<br>Nosara · Costa Rica</p>
+      </div>
+      <div class="footer-center">
+        <h4>Link</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="book.html">Book Now</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-right">
+        <h4>Contact</h4>
+        <p>nosaraadventures@gmail.com</p>
+        <p>+506 6144 4782</p>
+        <p><a href="https://www.instagram.com/nosara_adventures" target="_blank">Instagram</a></p>
+      </div>
     </div>
+  </footer>
 
-    <div class="footer-center">
-      <h4>Link</h4>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="book.html">Book Now</a></li>
-        <li><a href="about.html">About Us</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-right">
-      <h4>Contact</h4>
-      <p>nosaraadventures@gmail.com</p>
-      <p>+506 6144 4782</p>
-      <p>
-        <a href="https://www.instagram.com/nosara_adventures" target="_blank">Instagram</a>
-      </p>
-    </div>
-
-  </div>
-</footer>
-
-
-
-  <!-- JavaScript -->
-  <script src="script.js"></script>
+  <!-- SCRIPTS -->
+  <script src="js/nav-mobile.js" defer></script>
+  <script defer src="js/anim-scroll.js"></script>
+  <script defer src="js/util.js"></script>
+  <script defer src="js/index.js"></script>
   
-
-
 </body>
-
 </html>
-
-

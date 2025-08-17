@@ -2,68 +2,97 @@
 <html lang="es">
 
 <head>
-
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Us – Nosara Adventures</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title><!-- cambia solo este -->Book Your Adventure – Nosara Adventures</title>
 
-  <!-- Fuente  -->
+  <!-- Fuentes -->
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <!-- Íconos de Font Awesome -->
+  <!-- Librerías CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@17/build/css/intlTelInput.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/material_blue.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <!-- Estilos CSS -->
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="styles-mobile.css" media="only screen and (max-width: 1048px)" />
+  <!-- Estilos del sitio -->
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/styles-mobile.css" media="only screen and (max-width: 1048px)" />
+  <link rel="stylesheet" href="styles/about.css">
 
-  <!-- Favicon -->
-  <link rel="icon" href="favicon.png" type="image/png">
+  <!-- Favicon (usa la MISMA ruta en ambas) -->
+  <link rel="icon" href="images/favicon.png" type="image/png">
 </head>
+
 
 <body>
 
-<!-- ✅ NAV DESKTOP -->
+<!-- NAV ESCRITORIO -->
 <nav class="desktop-nav">
   <div class="main-nav-inner">
     <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="book.html">Book Now</a></li>
       <li><a href="about.html">About Us</a></li>
+      <li class="nav-item nav-dropdown">
+        <button class="btn-booknow" aria-haspopup="true" aria-expanded="false">
+          Book Now <span class="chev">▾</span>
+        </button>
+        <div class="dropdown-panel" role="menu">
+          <a href="book.html" class="drop-item" role="menuitem">
+            <div class="drop-text"><span class="drop-title">Rent an ATV</span></div>
+          </a>
+          <a href="book-surf.html" class="drop-item" role="menuitem">
+            <div class="drop-text"><span class="drop-title">Private Surf Lessons</span></div>
+          </a>
+        </div>
+      </li>
+      
     </ul>
-    <div class="logo">
-      <a href="index.html">Nosara Adventures</a>
+    <div class="logo"><a href="index.html">Nosara Adventures</a></div>
+  </div>
+</nav>
+
+<!-- NAV MÓVIL -->
+<nav class="mobile-nav" aria-label="Mobile">
+  <div class="logo"><a href="index.html">Nosara Adventures</a></div>
+
+  <button id="mobile-menu-button"
+          class="hamburger"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+          aria-controls="mobile-menu">
+    <span class="bars" aria-hidden="true"></span>
+  </button>
+
+  <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+    <div class="menu-inner">
+      <a href="index.html" class="menu-item">Home</a>
+      <a href="about.html" class="menu-item">About us</a>
+      <div class="menu-group">
+        <button id="mobile-dropdown-button"
+                class="menu-cta"
+                aria-expanded="false"
+                aria-controls="mobile-dropdown-menu">
+          Book Now
+        </button>
+        <div id="mobile-dropdown-menu" class="dropdown" aria-hidden="true">
+          <a href="book.html" class="submenu-item">Rent an ATV</a>
+          <a href="book-surf.html" class="submenu-item">Private Surf Lessons</a>
+        </div>
+      </div>
+      
     </div>
   </div>
+
+  <div id="mobile-overlay" class="overlay" aria-hidden="true"></div>
 </nav>
-
-<!-- ✅ NAV MOBILE -->
-<nav class="mobile-nav">
-  <div class="logo">
-    <a href="index.html">Nosara Adventures</a>
-  </div>
-  <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
-  <span class="icon" aria-hidden="true"></span>
-</button>
-
-</nav>
-
-<!-- ✅ MENÚ DESPLEGABLE -->
-<div class="mobile-menu" id="mobileMenu">
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="book.html">Book Now</a></li>
-    <li><a href="about.html">About Us</a></li>
-  </ul>
-</div>
-<div class="overlay" id="overlay"></div>
 
 
 
   <!-- Sección About Us -->
   <section class="about-us">
     <div class="about-imagen">
-      <img id="imagen-about" src="about.jpeg" alt="ATV en Nosara">
+      <img id="imagen-about" src="images/about.jpeg" alt="ATV en Nosara">
     </div>
     <div class="about-texto">
       <h2>About Us</h2>
@@ -116,7 +145,9 @@
   </div>
 </footer>
 
-  <script src="script.js"></script>
+<!-- SCRIPTS -->
+  <script src="js/nav-mobile.js" defer></script>
+  <script defer src="js/util.js"></script>
 
 </body>
 </html>
