@@ -55,7 +55,7 @@
   text-align: center;
 }
 .frase-fija h2 {
-  font-size: 55px;
+  font-size: 50px;
   font-weight: 700;
   color: var(--main-color);
   letter-spacing: 1px;
@@ -81,7 +81,7 @@ section.frase-fija p { margin-bottom: 1rem !important; }
   border-bottom: 1px solid #eee;
 }
 .section h2 {
-  font-size: 2em;
+  font-size: 50px;
   color: var(--main-color);
   margin-bottom: 10px;
 }
@@ -162,7 +162,7 @@ section.frase-fija p { margin-bottom: 1rem !important; }
 }
 .location-text h2 {
   font-family: var(--font-title);
-  font-size: 55px;
+  font-size: 50px;
   font-weight: 700;
   color: var(--main-color);
   margin-bottom: 1.5rem;
@@ -211,7 +211,7 @@ section.frase-fija p { margin-bottom: 1rem !important; }
 }
 .surf-text h2 {
   font-family: var(--font-title);
-  font-size: 55px;
+  font-size: 50px;
   font-weight: 700;
   color: var(--main-color);
   margin-bottom: 1.5rem;
@@ -267,7 +267,7 @@ section.frase-fija p { margin-bottom: 1rem !important; }
 }
 .reco-texto h2 {
   font-family: var(--font-title);
-  font-size: 55px;
+  font-size: 50px;
   font-weight: 700;
   color: var(--main-color);
   margin-bottom: 1.5rem;
