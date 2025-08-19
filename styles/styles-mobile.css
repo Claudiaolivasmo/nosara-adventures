@@ -173,13 +173,13 @@ img, video, iframe { max-width: 100%; height: auto; display: block; }
   /* HERO móvil */
   .hero { padding: min(24vh, 9rem) 1rem 6rem; text-align: center; }
   .hero .hero-content { inline-size: min(780px, 100%); margin-inline: auto; }
-  .hero h1 { font-size: clamp(1.7rem, 9vw, 2.8rem); }
+  .hero h1 { font-size: clamp(2.5rem, 9vw, 2.8rem); }
   .hero p  { font-size: clamp(1rem, 4.2vw, 1.15rem); }
 
   /* FRASE FIJA */
   .frase-fija { padding: 40px 20px 30px; text-align: center; }
   .frase-fija h2 {
-    font-size: 1.5rem; font-weight: 700; color: #0a3d62; letter-spacing: 1px;
+    font-size:2.3rem; font-weight: 700; color: #0a3d62; letter-spacing: 1px;
     max-width: 900px; margin: 0 auto 20px; text-wrap: balance;
   }
   .frase-fija p {
@@ -212,7 +212,15 @@ img, video, iframe { max-width: 100%; height: auto; display: block; }
     margin-inline: auto;
     text-align: center !important;
   }
-  #surf .surf-text h2,
+  #surf .surf-text h2{
+    text-align: center !important;
+    margin-left: auto;
+    margin-right: auto;
+    font-size:2.3rem
+
+  }
+  
+  
   #surf .surf-text p,
   #surf .surf-text .button-outline {
     text-align: center !important;
@@ -258,7 +266,15 @@ img, video, iframe { max-width: 100%; height: auto; display: block; }
   }
   #reco .reco-texto h2,
   #reco .reco-texto p,
-  .reco-texto h2,
+  .reco-texto h2{
+    text-align: center !important;
+    margin-left: auto;
+    margin-right: auto;
+    font-size:2.3rem
+  }
+  
+  
+  
   .reco-texto p {
     text-align: center !important;
     margin-left: auto;
@@ -285,7 +301,10 @@ img, video, iframe { max-width: 100%; height: auto; display: block; }
   .about-imagen { inline-size: 100%; display: flex; justify-content: center; }
   .about-imagen img { max-inline-size: 100%; height: auto; }
   .about-texto { inline-size: 100%; max-inline-size: 680px; }
-  .about-texto h2 { font-size: 1.5rem; }
+  .about-texto h2 { text-align: center !important;
+    margin-left: auto;
+    margin-right: auto;
+    font-size:2.3rem }
   .about-texto p  { font-size: 1rem; line-height: 1.6; }
 
   /* LOCATION */
@@ -306,7 +325,15 @@ img, video, iframe { max-width: 100%; height: auto; display: block; }
     margin-inline: auto;
     text-align: center !important;
   }
-  #location .location-text h2,
+  #location .location-text h2 {
+
+    text-align: center !important;
+    margin-left: auto;
+    margin-right: auto;
+    font-size:2.3rem
+  }
+  
+  
   #location .location-text p,
   .location-text h2,
   .location-text p {
