@@ -1,3 +1,7 @@
+/* ======= FIX GLOBAL: usar border-box para que el padding no sume ancho ======= */
+*, *::before, *::after { box-sizing: border-box; }
+
+/* ======= BASE ======= */
 html, body { margin: 0; padding: 0; width: 100%; max-width: 100%; overflow-x: hidden; }
 img, video, iframe { max-width: 100%; height: auto; display: block; }
 
@@ -10,7 +14,7 @@ img, video, iframe { max-width: 100%; height: auto; display: block; }
 
 /* ===== Utilidades de centrado ===== */
 .section-center {
-  width: min(1100px, 92vw);
+  inline-size: min(1100px, 100%);
   margin-inline: auto;
 }
 .center-block {
@@ -75,7 +79,7 @@ img, video, iframe { max-width: 100%; height: auto; display: block; }
   padding: min(18vh, 8rem) 1rem;
 }
 .hero .hero-inner {
-  width: min(960px, 92vw);
+  inline-size: min(960px, 100%);
   margin-inline: auto;
 }
 .hero h1 {
@@ -91,7 +95,6 @@ img, video, iframe { max-width: 100%; height: auto; display: block; }
 
 /* ======== Móvil ======== */
 /*
- * Mejoras para el código móvil.
  * Este CSS solo debe ser cargado con la media query:
  * <link rel="stylesheet" href="styles/styles-mobile.css" media="only screen and (max-width: 1048px)" />
  */
@@ -125,7 +128,7 @@ img, video, iframe { max-width: 100%; height: auto; display: block; }
 
   /* MENÚ DESPLEGABLE */
   .mobile-menu {
-    position: fixed; top: 64px; left: 0; width: 100%;
+    position: fixed; top: 64px; left: 0; inline-size: 100%;
     background: #fff; max-height: 0; overflow: hidden; z-index: 999;
     box-shadow: 0 4px 10px rgba(0, 0, 0, .05);
     transition: max-height .35s ease, visibility .35s ease;
@@ -167,9 +170,9 @@ img, video, iframe { max-width: 100%; height: auto; display: block; }
   /* OVERLAY */
   .overlay.show { opacity: 1; pointer-events: auto; visibility: visible; }
 
-  /* HERO móvil (usar .hero-content) */
+  /* HERO móvil */
   .hero { padding: min(24vh, 9rem) 1rem 6rem; text-align: center; }
-  .hero .hero-content { width: min(780px, 94vw); margin-inline: auto; }
+  .hero .hero-content { inline-size: min(780px, 100%); margin-inline: auto; }
   .hero h1 { font-size: clamp(1.7rem, 9vw, 2.8rem); }
   .hero p  { font-size: clamp(1rem, 4.2vw, 1.15rem); }
 
@@ -187,32 +190,28 @@ img, video, iframe { max-width: 100%; height: auto; display: block; }
   /* ATV */
   .atv-info-box {
     display: flex; flex-direction: column; align-items: center; text-align: center;
-    padding: 2rem 1rem; width: min(1100px, 92vw); margin-inline: auto;
+    padding: 2rem 1rem; inline-size: min(1100px, 100%); margin-inline: auto;
   }
-  .atv-card-vertical { padding: 1.5rem; width: 100%; max-width: 640px; }
+  .atv-card-vertical { padding: 1.5rem; inline-size: 100%; max-inline-size: 640px; }
   .atv-card-vertical h2 { font-size: 1.5rem; }
   .atv-card-vertical .price { font-size: 1.4rem; }
   .atv-card-vertical ul { font-size: .95rem; }
 
   /* SURF */
-  /* === SURF: centrado real de título, párrafo y botón (móvil) === */
   #surf .surf-container { 
     display: flex; 
     flex-direction: column; 
     align-items: center; 
     gap: 1.75rem; 
     padding: 0 1rem; 
-    width: min(1100px, 92vw); 
+    inline-size: min(1100px, 100%); 
     margin-inline: auto;
   }
-
   #surf .surf-text {
-    max-width: 680px;
+    max-inline-size: 680px;
     margin-inline: auto;
-    text-align: center !important;          /* fuerza el centrado */
+    text-align: center !important;
   }
-
-  /* fuerza el centrado de cada hijo por si hay reglas heredadas */
   #surf .surf-text h2,
   #surf .surf-text p,
   #surf .surf-text .button-outline {
@@ -220,30 +219,23 @@ img, video, iframe { max-width: 100%; height: auto; display: block; }
     margin-left: auto;
     margin-right: auto;
   }
-
-  /* botón con ancho controlado y centrado */
   #surf .surf-text .button-outline {
     display: block;
-    width: 100%;
-    max-width: 300px;
+    inline-size: 100%;
+    max-inline-size: 300px;
     padding: .9rem 1.5rem;
   }
-
-  /* el media ya lo tienes, dejo el bloque del video para completar */
   #surf .surf-media { 
     display: flex; 
     justify-content: center; 
-    width: 100%; 
+    inline-size: 100%; 
   }
-
   #surf .surf-video {
-    width: min(420px, 96vw);
+    inline-size: min(420px, 100%);
     aspect-ratio: 9 / 16;
     border-radius: 16px;
     overflow: hidden;
   }
-
-
 
   /* RECOMENDACIONES */
   #reco .reco-container,
@@ -254,17 +246,16 @@ img, video, iframe { max-width: 100%; height: auto; display: block; }
     text-align: center !important;
     gap: 2rem;
     padding: 0 1rem;
-    width: min(1100px, 92vw);
+    inline-size: min(1100px, 100%);
     margin-inline: auto;
   }
-
   #reco .reco-texto,
   .reco-texto {
-    max-width: 680px;
+    max-inline-size: 680px;
     margin-inline: auto;
     text-align: center !important;
+    order: -1;
   }
-
   #reco .reco-texto h2,
   #reco .reco-texto p,
   .reco-texto h2,
@@ -273,28 +264,27 @@ img, video, iframe { max-width: 100%; height: auto; display: block; }
     margin-left: auto;
     margin-right: auto;
   }
-
-  /* Imagen centrada */
   .reco-imagen {
-    width: 100%;
+    inline-size: 100%;
     display: flex;
     justify-content: center;
+    order: 0;
   }
   .reco-imagen img {
-    width: 100%;
+    inline-size: 100%;
     height: auto;
-    max-width: 600px;
+    max-inline-size: 600px;
     object-fit: cover;
   }
 
   /* ABOUT */
   .about-us {
     display: flex; flex-direction: column; align-items: center; text-align: center;
-    gap: 2rem; padding: 40px 1.5rem; width: min(1100px, 92vw); margin-inline: auto;
+    gap: 2rem; padding: 40px 1.5rem; inline-size: min(1100px, 100%); margin-inline: auto;
   }
-  .about-imagen { width: 100%; display: flex; justify-content: center; }
-  .about-imagen img { max-width: 100%; height: auto; }
-  .about-texto { width: 100%; max-width: 680px; }
+  .about-imagen { inline-size: 100%; display: flex; justify-content: center; }
+  .about-imagen img { max-inline-size: 100%; height: auto; }
+  .about-texto { inline-size: 100%; max-inline-size: 680px; }
   .about-texto h2 { font-size: 1.5rem; }
   .about-texto p  { font-size: 1rem; line-height: 1.6; }
 
@@ -305,19 +295,17 @@ img, video, iframe { max-width: 100%; height: auto; display: block; }
     flex-direction: column;
     align-items: center;
     gap: 2rem;
-    width: min(1100px, 92vw);
+    inline-size: min(1100px, 100%);
     padding: 0 1rem;
     margin-inline: auto;
     text-align: center !important;
   }
-
   #location .location-text,
   .location-text {
-    max-width: 680px;
+    max-inline-size: 680px;
     margin-inline: auto;
     text-align: center !important;
   }
-
   #location .location-text h2,
   #location .location-text p,
   .location-text h2,
@@ -329,25 +317,25 @@ img, video, iframe { max-width: 100%; height: auto; display: block; }
 
   /* Mapa responsivo y centrado */
   .map-container {
-    width: 100%;
-    max-width: 100%;
+    inline-size: 100%;
+    max-inline-size: 100%;
     aspect-ratio: 1/1;
     overflow: hidden;
     box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
   }
   .map-container iframe {
-    width: 100%;
-    height: 100%;
+    inline-size: 100%;
+    block-size: 100%;
     display: block;
   }
 
   /* FOOTER */
   .footer-content {
     display: flex; flex-direction: column; align-items: center; text-align: center;
-    width: min(1100px, 92vw); margin-inline: auto;
+    inline-size: min(1100px, 100%); margin-inline: auto;
   }
   .footer-left, .footer-center, .footer-right {
-    flex: none; width: 100%; min-width: auto; margin-bottom: 2rem;
+    flex: none; inline-size: 100%; min-inline-size: auto; margin-bottom: 2rem;
   }
   .footer-center ul { padding-left: 0; }
   .footer h4 { font-size: 1.2rem; margin-bottom: .7rem; }
@@ -355,5 +343,5 @@ img, video, iframe { max-width: 100%; height: auto; display: block; }
   .footer-left p:first-child { text-align: center; }
 
   /* Botones flotantes */
-  .floating-btn { position: fixed; right: 16px; bottom: 16px; inset-inline-end: 16px; }
+  .floating-btn { position: fixed; inset-inline-end: 16px; bottom: 16px; }
 }
