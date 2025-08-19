@@ -65,13 +65,27 @@ img, video, iframe {
 .dropdown-panel a::after{ content:none !important; }
 
 /* ====== TIPOGRAFÍA FLUIDA H1 (hero/títulos grandes) ====== */
-h1{
-  font-family:var(--font-title); font-weight:700; color:#fff;
-  line-height:1.15; text-align:center;
-  font-size: clamp(1.9rem, 8vw, 4.2rem);  /* fluido y sin romper */
-  text-wrap: balance;
-  word-break: break-word;
+.hero h1 {
+  font-family: var(--font-title);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.1;
+  text-align: center;
+
+  /* Tamaño fluido */
+  font-size: clamp(1.5rem, 6vw, 3rem);
+
+  /* Evitar que cada letra salte */
+  white-space: normal;
+  word-break: normal;
+  hyphens: auto;
+
+  /* Para que no pegue con los bordes */
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 0 .5rem;
 }
+
 
 /* === TODO lo móvil dentro de este media === */
 @media only screen and (max-width: 1048px){
@@ -146,10 +160,10 @@ h1{
   }
 
   /* SECCIÓN SURF */
-  .surf-container{ flex-direction:column; gap:1.75rem; padding:0 1rem; }
+  .surf-container{ flex-direction:column; gap:1.75rem; padding:0 1rem; align-items:center;  }
   .surf-video{ width:min(420px, 96vw); aspect-ratio:9/16; border-radius:16px; }
   .play-toggle{ bottom:12px; right:12px; padding:12px 16px; font-size:18px; }
-  .surf-text{ max-width:680px; text-align:center; margin-inline:auto; }
+  .surf-text{ max-width:680px; text-align:center; margin-inline:auto; justify-content:center;  }
   .surf-text h2{ font-size:1.5rem; margin-bottom:.9rem; }
   .surf-text p{ font-size:1rem; line-height:1.7; margin-bottom:1rem; text-align:center; }
   .surf-text .btn{ display:inline-block; text-align:center; }
