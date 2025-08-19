@@ -79,7 +79,7 @@ img, video, iframe { max-width: 100%; height: auto; display: block; }
   margin-inline: auto;
 }
 .hero h1 {
-  font-size: clamp(1.5rem, 8vw, 2.4rem);
+  font-size: clamp(2rem, 8vw, 2.4rem);
   line-height: 1.2;
   text-align: center;
 }
@@ -195,17 +195,55 @@ img, video, iframe { max-width: 100%; height: auto; display: block; }
   .atv-card-vertical ul { font-size: .95rem; }
 
   /* SURF */
-  .surf-container {
-    display: flex; flex-direction: column; gap: 1.75rem; padding: 0 1rem;
-    align-items: center; width: min(1100px, 92vw); margin-inline: auto; text-align: center;
+  /* === SURF: centrado real de título, párrafo y botón (móvil) === */
+  #surf .surf-container { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 1.75rem; 
+    padding: 0 1rem; 
+    width: min(1100px, 92vw); 
+    margin-inline: auto;
   }
-  .surf-text { max-width: 680px; margin-inline: auto; text-align: center; }
-  .surf-text h2 { font-size: 1.5rem; margin-bottom: .9rem; }
-  .surf-text p  { font-size: 1rem; line-height: 1.7; margin-bottom: 1rem; }
-  .surf-text .button-outline {
-    display: block; width: 100%; max-width: 300px; margin: 1rem auto 0;
-    font-size: 1rem; padding: .9rem 1.5rem; text-align: center;
+
+  #surf .surf-text {
+    max-width: 680px;
+    margin-inline: auto;
+    text-align: center !important;          /* fuerza el centrado */
   }
+
+  /* fuerza el centrado de cada hijo por si hay reglas heredadas */
+  #surf .surf-text h2,
+  #surf .surf-text p,
+  #surf .surf-text .button-outline {
+    text-align: center !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* botón con ancho controlado y centrado */
+  #surf .surf-text .button-outline {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    padding: .9rem 1.5rem;
+  }
+
+  /* el media ya lo tienes, dejo el bloque del video para completar */
+  #surf .surf-media { 
+    display: flex; 
+    justify-content: center; 
+    width: 100%; 
+  }
+
+  #surf .surf-video {
+    width: min(420px, 96vw);
+    aspect-ratio: 9 / 16;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+
 
   /* RECOMENDACIONES */
   .reco-container {
