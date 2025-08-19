@@ -246,15 +246,46 @@ img, video, iframe { max-width: 100%; height: auto; display: block; }
 
 
   /* RECOMENDACIONES */
+  #reco .reco-container,
   .reco-container {
-    display: flex; flex-direction: column-reverse; align-items: center;
-    gap: 2rem; padding: 0 1rem; width: min(1100px, 92vw);
-    margin-inline: auto; text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center !important;
+    gap: 2rem;
+    padding: 0 1rem;
+    width: min(1100px, 92vw);
+    margin-inline: auto;
   }
-  .reco-texto h2 { font-size: 1.5rem; }
-  .reco-texto p  { font-size: 1rem; }
-  .reco-imagen { width: 100%; display: flex; justify-content: center; }
-  .reco-imagen img { width: 100%; height: auto; max-width: 600px; object-fit: cover; }
+
+  #reco .reco-texto,
+  .reco-texto {
+    max-width: 680px;
+    margin-inline: auto;
+    text-align: center !important;
+  }
+
+  #reco .reco-texto h2,
+  #reco .reco-texto p,
+  .reco-texto h2,
+  .reco-texto p {
+    text-align: center !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Imagen centrada */
+  .reco-imagen {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .reco-imagen img {
+    width: 100%;
+    height: auto;
+    max-width: 600px;
+    object-fit: cover;
+  }
 
   /* ABOUT */
   .about-us {
@@ -268,17 +299,47 @@ img, video, iframe { max-width: 100%; height: auto; display: block; }
   .about-texto p  { font-size: 1rem; line-height: 1.6; }
 
   /* LOCATION */
+  #location .location-content,
   .location-content {
-    display: flex; flex-direction: column; align-items: center; gap: 2rem;
-    width: min(1100px, 92vw); padding: 0 1rem; margin-inline: auto; text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: min(1100px, 92vw);
+    padding: 0 1rem;
+    margin-inline: auto;
+    text-align: center !important;
   }
-  .location-text h2 { font-size: 1.5rem; }
-  .location-text p  { font-size: 1rem; }
+
+  #location .location-text,
+  .location-text {
+    max-width: 680px;
+    margin-inline: auto;
+    text-align: center !important;
+  }
+
+  #location .location-text h2,
+  #location .location-text p,
+  .location-text h2,
+  .location-text p {
+    text-align: center !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Mapa responsivo y centrado */
   .map-container {
-    width: 100%; max-width: 100%; aspect-ratio: 1/1; overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 1/1;
+    overflow: hidden;
     box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
   }
-  .map-container iframe { width: 100%; height: 100%; display: block; }
+  .map-container iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
 
   /* FOOTER */
   .footer-content {
