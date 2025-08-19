@@ -94,12 +94,17 @@ img, video, iframe { max-width: 100%; height: auto; display: block; }
 }
 
 /* ======== Móvil ======== */
+/*
+ * Mejoras para el código móvil.
+ * Este CSS solo debe ser cargado con la media query:
+ * <link rel="stylesheet" href="styles/styles-mobile.css" media="only screen and (max-width: 1048px)" />
+ */
 @media only screen and (max-width: 1048px) {
   /* Mostrar elementos móviles */
   .mobile-nav, .mobile-menu, .overlay { display: block; }
   .desktop-nav { display: none; }
 
-  /* NAV MÓVIL centrada */
+  /* NAV MÓVIL */
   .mobile-nav {
     position: sticky; top: 0; background: #fff; height: 64px;
     display: flex; align-items: center; justify-content: center; gap: .5rem;
@@ -167,26 +172,39 @@ img, video, iframe { max-width: 100%; height: auto; display: block; }
   .hero p { font-size: clamp(1rem, 4.2vw, 1.15rem); }
 
   /* SECCIÓN SURF */
+  .surf-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    padding: 0 1rem;
+    align-items: center;
+    width: min(1100px, 92vw);
+    margin-inline: auto;
+}
 
-  .surf-container{
-    display:flex; flex-direction:column; gap:1.75rem; padding:0 1rem;
-    align-items:center;
-    width:min(1100px, 92vw); margin-inline:auto;
-  }
-  .surf-text {
-    /* Eliminamos text-align: center de aquí
-       y dejamos que la clase .center-block en el HTML lo haga. */
+.surf-text {
     max-width: 680px;
     margin-inline: auto;
-  }
-  .surf-text h2{ font-size:1.5rem; margin-bottom:.9rem; }
-  .surf-text p{ font-size:1rem; line-height:1.7; margin-bottom:1rem; }
-  .surf-text .btn{ display:inline-block; text-align:center; }
+    /* Esta línea es la que soluciona el problema */
+    text-align: center; 
+}
 
-  /* RECOMENDACIONES (centrado) */
+.surf-text h2 { 
+    font-size: 1.5rem; 
+    margin-bottom:.9rem; 
+}
+
+.surf-text p { 
+    font-size: 1rem; 
+    line-height: 1.7; 
+    margin-bottom: 1rem; 
+}
+  .surf-text .button-outline { display: block; width: 100%; max-width: 300px; margin: 1rem auto 0; font-size: 1rem; padding: .9rem 1.5rem; text-align: center; }
+
+  /* RECOMENDACIONES */
   .reco-container {
     display: flex;
-    flex-direction: column-reverse; /* Esto invierte el orden de los elementos hijos */
+    flex-direction: column-reverse;
     align-items: center;
     gap: 2rem;
     padding: 0 1rem;
@@ -199,7 +217,7 @@ img, video, iframe { max-width: 100%; height: auto; display: block; }
   .reco-imagen { width: 100%; display: flex; justify-content: center; }
   .reco-imagen img { width: 100%; height: auto; max-width: 600px; object-fit: cover; }
 
-  /* ABOUT (centrado) */
+  /* ABOUT */
   .about-us {
     display: flex; flex-direction: column; align-items: center; text-align: center;
     gap: 2rem; padding: 40px 1.5rem; width: min(1100px, 92vw); margin-inline: auto;
@@ -209,9 +227,8 @@ img, video, iframe { max-width: 100%; height: auto; display: block; }
   .about-texto { width: 100%; max-width: 680px; }
   .about-texto h2 { font-size: 1.5rem; }
   .about-texto p { font-size: 1rem; line-height: 1.6; }
-  .button-outline { display: block; width: 100%; max-width: 300px; margin: 1rem auto 0; font-size: 1rem; padding: .9rem 1.5rem; text-align: center; }
 
-  /* ATV (centrado) */
+  /* ATV */
   .atv-info-box {
     display: flex; flex-direction: column; align-items: center; text-align: center;
     padding: 2rem 1rem; width: min(1100px, 92vw); margin-inline: auto;
@@ -221,7 +238,7 @@ img, video, iframe { max-width: 100%; height: auto; display: block; }
   .atv-card-vertical .price { font-size: 1.4rem; }
   .atv-card-vertical ul { font-size: .95rem; }
 
-  /* LOCATION (referencia de centrado) */
+  /* LOCATION */
   .location-content {
     display: flex; flex-direction: column; align-items: center; gap: 2rem;
     width: min(1100px, 92vw); padding: 0 1rem; margin-inline: auto; text-align: center;
@@ -230,7 +247,7 @@ img, video, iframe { max-width: 100%; height: auto; display: block; }
   .location-text p { font-size: 1rem; }
   .map-container { width: 100%; max-width: 100%; aspect-ratio: 1/1; overflow: hidden; box-shadow: 0 8px 24px rgba(0, 0, 0, .08); }
 
-  /* FOOTER (centrado) */
+  /* FOOTER */
   .footer-content { display: flex; flex-direction: column; align-items: center; text-align: center; width: min(1100px, 92vw); margin-inline: auto; }
   .footer-left, .footer-center, .footer-right { flex: none; width: 100%; min-width: auto; margin-bottom: 2rem; }
   .footer-center ul { padding-left: 0; }
@@ -238,15 +255,19 @@ img, video, iframe { max-width: 100%; height: auto; display: block; }
   .footer-center a, .footer-right a { font-size: 1rem; }
   .footer-left p:first-child { text-align: center; }
 
-  /* FRASE (centrada) */
+  /* FRASE */
   .frase-fija { padding: 40px 20px 30px; text-align: center; }
   .frase-fija h2 {
     font-size: 1.5rem; font-weight: 700; color: #0a3d62; letter-spacing: 1px;
     max-width: 900px; margin: 0 auto 20px; text-wrap: balance;
   }
   .frase-fija p { font-size: 1em; color: #333; max-width: 800px; margin: 0 auto 1rem; line-height: 1.6; font-weight: 400; }
-  section.frase-fija p { margin-bottom: 1rem !important; }
+  
+  /* Botones flotantes (mejorados) */
+  .floating-btn {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    inset-inline-end: 16px;
+  }
 }
-
-/* ====== Botones flotantes dentro del viewport ====== */
-.floating-btn { position: fixed; right: 16px; bottom: 16px; inset-inline-end: 16px; }
