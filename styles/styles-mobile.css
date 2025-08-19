@@ -1,35 +1,39 @@
 /* ====== FIXES GLOBALES anti-scroll lateral ====== */
 * { box-sizing: border-box; }
-html, body {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;             /* adiós gutter horizontal */
-}
-img, video, iframe {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-:root {
-  --font-title: 'Cormorant Garamond', serif;
-  --font-text: 'Inter', sans-serif;
-  --main-color: #0a3d62;
-  --accent-color: #38ada9;
+html, body { width: 100%; max-width: 100%; overflow-x: hidden; }
+img, video, iframe { max-width: 100%; height: auto; display: block; }
+
+:root{
+  --font-title:'Cormorant Garamond', serif;
+  --font-text:'Inter', sans-serif;
+  --main-color:#0a3d62;
+  --accent-color:#38ada9;
 }
 
-/* === UTILIDADES GLOBALES (para ocultar el scroll) === */
-.no-scroll { overflow: hidden; height: 100vh; }
+/* ===== Utilidades de centrado (como Location) ===== */
+.section-center{
+  width: min(1100px, 92vw);   /* mismo patrón de “Location” */
+  margin-inline: auto;
+}
+.center-block{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* === UTILIDADES GLOBALES === */
+.no-scroll{ overflow: hidden; height: 100vh; }
 
 /* === OVERLAY === */
 .overlay{
-  position:fixed; inset:0;
-  background:rgba(0,0,0,.4);
+  position:fixed; inset:0; background:rgba(0,0,0,.4);
   z-index:998; opacity:0; pointer-events:none; visibility:hidden;
   transition:opacity .25s ease, visibility .25s ease;
 }
 .overlay.show{ opacity:1; pointer-events:auto; visibility:visible; }
 
-/* Animaciones utilitarias */
+/* === Animaciones === */
 @keyframes fadeInUp{ from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)} }
 .fade-in{ opacity:0; transform:translateY(30px); transition:all .6s ease; }
 .fade-in.visible{ opacity:1; transform:translateY(0); }
@@ -64,41 +68,43 @@ img, video, iframe {
 }
 .dropdown-panel a::after{ content:none !important; }
 
-/* ====== TIPOGRAFÍA FLUIDA H1 (hero/títulos grandes) ====== */
-.hero h1 {
-  font-family: var(--font-title);
-  font-weight: 700;
-  color: #fff;
-  line-height: 1.1;
+/* ====== HERO centrado ====== */
+.hero{
+  position: relative;
+  display: grid;
+  place-items: center;     /* centra vertical y horizontal */
   text-align: center;
-
-  /* Tamaño fluido */
-  font-size: clamp(1.5rem, 6vw, 3rem);
-
-  /* Evitar que cada letra salte */
-  white-space: normal;
-  word-break: normal;
-  hyphens: auto;
-
-  /* Para que no pegue con los bordes */
-  max-width: 90%;
+  padding: min(18vh, 8rem) 1rem;
+}
+.hero .hero-inner{
+  width: min(960px, 92vw);
+  margin-inline: auto;
+}
+.hero h1{
+  font-family: var(--font-title);
+  font-weight: 700; color: #fff; line-height: 1.1;
+  font-size: clamp(1.6rem, 7.5vw, 3.2rem);
+  white-space: normal; word-break: normal; hyphens: auto;
+  margin: 0 0 .75rem;
+}
+.hero p{
+  max-width: 70ch;
   margin: 0 auto;
-  padding: 0 .5rem;
+  font-size: clamp(1rem, 3.8vw, 1.25rem);
 }
 
-
-/* === TODO lo móvil dentro de este media === */
+/* ======== Móvil ======== */
 @media only screen and (max-width: 1048px){
 
   /* Mostrar elementos móviles */
   .mobile-nav, .mobile-menu, .overlay{ display:block; }
   .desktop-nav{ display:none; }
 
-  /* NAV MÓVIL */
+  /* NAV MÓVIL centrada */
   .mobile-nav{
-    position:sticky; top:0; background:#fff; height:64px;  /* un poco más baja */
-    display:flex; justify-content:center; align-items:center; padding:0 1rem;
-    z-index:1001; border-bottom:1px solid #eee;
+    position:sticky; top:0; background:#fff; height:64px;
+    display:flex; align-items:center; justify-content:center; gap:.5rem;
+    padding:0 1rem; z-index:1001; border-bottom:1px solid #eee;
   }
   .mobile-nav .logo{
     position:absolute; left:50%; transform:translateX(-50%);
@@ -108,8 +114,9 @@ img, video, iframe {
     color:var(--main-color); text-decoration:none; white-space:nowrap;
   }
   .hamburger{
-    display:block !important; background:none; border:0; cursor:pointer;
-    font-size:2rem; color:#0a3d62; z-index:1002; margin-left:auto; line-height:1;
+    display:block !important; margin-left:auto;
+    background:transparent; border:0; cursor:pointer; line-height:1;
+    font-size:2rem; color:#0a3d62; z-index:1002;
   }
   .hamburger .bars{ display:inline-block; font-size:2rem; }
   .hamburger .bars::before{ content:"☰"; }
@@ -131,7 +138,7 @@ img, video, iframe {
   }
   .mobile-menu .menu-item, .mobile-menu .menu-cta{
     display:block; text-decoration:none; font-size:1.1rem; font-family:var(--font-title);
-    color:#0a3d62; background:transparent; border:0; text-align:left;
+    color:#0a3d62; background:transparent; border:0; text-align:center;   /* centrado */
     padding:.6rem .2rem; border-radius:10px;
   }
   .mobile-menu .menu-item:hover, .mobile-menu .menu-cta:hover{ background:#f1f1f1; }
@@ -142,7 +149,7 @@ img, video, iframe {
   /* SUBMENÚ (acordeón) */
   .mobile-menu .dropdown{
     max-height:0; overflow:hidden; transition:max-height .3s ease, padding .3s ease, opacity .2s ease;
-    background:#fafafa; border-left:2px solid var(--main-color); margin-left:0; /* evita overflow */
+    background:#fafafa; border-left:2px solid var(--main-color); margin-left:0;
     padding-left:.75rem; opacity:0; visibility:hidden;
   }
   .mobile-menu .dropdown.open{
@@ -150,63 +157,80 @@ img, video, iframe {
   }
   .submenu-item{
     display:block; padding:.5rem 0; font-size:1.05rem; color:#0a3d62; text-decoration:none; border-radius:8px;
+    text-align:center;  /* centrado */
   }
   .submenu-item:hover{ background:#f1f1f1; }
 
-  /* HERO / TÍTULOS */
-  h1{
-    font-size: clamp(1.8rem, 9vw, 3rem);
-    padding-inline: .5rem;  /* respiro a los lados */
-  }
+  /* HERO móvil */
+  .hero{ padding: min(24vh, 9rem) 1rem 6rem; }
+  .hero .hero-inner{ width: min(780px, 94vw); }
+  .hero h1{ font-size: clamp(1.7rem, 9vw, 2.8rem); padding-inline:.5rem; }
+  .hero p{ font-size: clamp(1rem, 4.2vw, 1.15rem); }
 
-  /* SECCIÓN SURF */
-  .surf-container{ flex-direction:column; gap:1.75rem; padding:0 1rem; align-items:center;  }
+  /* SECCIÓN SURF (centrada como Location) */
+  .surf-container{
+    composes: section-center; /* si usas CSS Modules ignora esta línea; es conceptual */
+    display:flex; flex-direction:column; gap:1.75rem; padding:0 1rem;
+    align-items:center; text-align:center;
+    width:min(1100px, 92vw); margin-inline:auto;
+  }
   .surf-video{ width:min(420px, 96vw); aspect-ratio:9/16; border-radius:16px; }
   .play-toggle{ bottom:12px; right:12px; padding:12px 16px; font-size:18px; }
-  .surf-text{ max-width:680px; text-align:center; margin-inline:auto; justify-content:center;  }
+  .surf-text{ max-width:680px; margin-inline:auto; }
   .surf-text h2{ font-size:1.5rem; margin-bottom:.9rem; }
-  .surf-text p{ font-size:1rem; line-height:1.7; margin-bottom:1rem; text-align:center; }
+  .surf-text p{ font-size:1rem; line-height:1.7; margin-bottom:1rem; }
   .surf-text .btn{ display:inline-block; text-align:center; }
 
-  /* RECOMENDACIONES */
-  .reco-container{ display:flex; flex-direction:column; align-items:center; gap:2rem; padding:0 1rem; width:100%; box-sizing:border-box; }
+  /* RECOMENDACIONES (centrado) */
+  .reco-container{
+    display:flex; flex-direction:column; align-items:center; gap:2rem;
+    padding:0 1rem; width:min(1100px, 92vw); margin-inline:auto; text-align:center;
+  }
   .reco-texto h2{ font-size:1.5rem; }
   .reco-texto p{ font-size:1rem; }
   .reco-imagen{ width:100%; display:flex; justify-content:center; }
   .reco-imagen img{ width:100%; height:auto; max-width:600px; object-fit:cover; }
 
-  /* ABOUT */
-  .about-us{ flex-direction:column; padding:40px 1.5rem; gap:2rem; text-align:center; }
-  .about-imagen{ width:100%; max-width:100%; display:flex; justify-content:center; }
+  /* ABOUT (centrado) */
+  .about-us{
+    display:flex; flex-direction:column; align-items:center; text-align:center;
+    gap:2rem; padding:40px 1.5rem; width:min(1100px, 92vw); margin-inline:auto;
+  }
+  .about-imagen{ width:100%; display:flex; justify-content:center; }
   .about-imagen img{ max-width:100%; height:auto; }
-  .about-texto{ width:100%; max-width:100%; }
+  .about-texto{ width:100%; max-width:680px; }
   .about-texto h2{ font-size:1.5rem; }
   .about-texto p{ font-size:1rem; line-height:1.6; }
   .button-outline{ display:block; width:100%; max-width:300px; margin:1rem auto 0; font-size:1rem; padding:.9rem 1.5rem; text-align:center; }
 
-  /* ATV CARD */
-  .atv-info-box{ flex-direction:column; padding:2rem 1rem; }
-  .atv-card-vertical{ padding:1.5rem; }
+  /* ATV (centrado) */
+  .atv-info-box{
+    display:flex; flex-direction:column; align-items:center; text-align:center;
+    padding:2rem 1rem; width:min(1100px, 92vw); margin-inline:auto;
+  }
+  .atv-card-vertical{ padding:1.5rem; width:100%; max-width:640px; }
   .atv-card-vertical h2{ font-size:1.5rem; }
   .atv-card-vertical .price{ font-size:1.4rem; }
   .atv-card-vertical ul{ font-size:.95rem; }
 
-  /* UBICACIÓN / MAPA */
-  .location-content{ display:flex; flex-wrap:wrap; flex-direction:column; align-items:center; gap:2rem; width:100%; padding:0 1rem; box-sizing:border-box; }
-  .location-text h2{ font-size:1.5rem; text-align:center; }
-  .location-text p{ font-size:1rem; text-align:center; }
+  /* LOCATION (referencia de centrado) */
+  .location-content{
+    display:flex; flex-direction:column; align-items:center; gap:2rem; 
+    width:min(1100px, 92vw); padding:0 1rem; margin-inline:auto; text-align:center;
+  }
+  .location-text h2{ font-size:1.5rem; }
+  .location-text p{ font-size:1rem; }
   .map-container{ width:100%; max-width:100%; aspect-ratio:1/1; overflow:hidden; box-shadow:0 8px 24px rgba(0,0,0,.08); }
 
-  /* FOOTER */
-  .footer-content{ flex-direction:column; align-items:center; text-align:center; }
+  /* FOOTER (centrado) */
+  .footer-content{ display:flex; flex-direction:column; align-items:center; text-align:center; width:min(1100px, 92vw); margin-inline:auto; }
   .footer-left, .footer-center, .footer-right{ flex:none; width:100%; min-width:auto; margin-bottom:2rem; }
-  .footer-left{ align-items:center; justify-content:center; }
   .footer-center ul{ padding-left:0; }
   .footer h4{ font-size:1.2rem; margin-bottom:.7rem; }
   .footer-center a, .footer-right a{ font-size:1rem; }
   .footer-left p:first-child{ text-align:center; }
 
-  /* FRASE */
+  /* FRASE (centrada) */
   .frase-fija{ padding:40px 20px 30px; text-align:center; }
   .frase-fija h2{
     font-size:1.5rem; font-weight:700; color:#0a3d62; letter-spacing:1px;
@@ -216,6 +240,8 @@ img, video, iframe {
   section.frase-fija p{ margin-bottom:1rem !important; }
 }
 
-/* ====== EXTRA: si tienes botones flotantes (WhatsApp/IG) ====== */
-/* Asegúrate de posicionarlos dentro del viewport sin empujar el ancho */
+/* ====== Botones flotantes dentro del viewport ====== */
 .floating-btn{ position:fixed; right:16px; bottom:16px; inset-inline-end:16px; }
+
+
+
