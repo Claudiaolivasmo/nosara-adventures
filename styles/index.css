@@ -190,25 +190,33 @@ section.frase-fija p { margin-bottom: 1rem !important; }
   display: flex;
   flex-wrap: wrap;
   gap: 4rem;
-  align-items: center;
+  align-items: flex-start;
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 1rem;
 }
-.surf-media { flex: 1; display: flex; justify-content: center; }
+
+.surf-media {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
 .surf-video {
   position: relative;
   width: min(360px, 92vw);
   aspect-ratio: 9 / 16;
   overflow: hidden;
-  box-shadow: 0 6px 18px rgba(0,0,0,.2);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
 }
+
 .surf-text {
-  flex: 1.6;
+  flex: 1.4;
   min-width: 0;
   max-width: 1000px;
   text-align: left;
 }
+
 .surf-text h2 {
   font-family: var(--font-title);
   font-size: 50px;
@@ -218,16 +226,32 @@ section.frase-fija p { margin-bottom: 1rem !important; }
   line-height: 1.2;
   letter-spacing: 0.3px;
 }
+
 .surf-text p,
-.surf-text .btn { text-align: left; }
-.surf-text, .surf-text * { text-align: left !important; }
-.v9x16 { width: 100%; height: 100%; object-fit: cover; }
+.surf-text .btn {
+  text-align: left;
+}
+
+.surf-info-box {
+  /* Añade esta línea */
+  padding: 6rem 2rem; 
+  /* Puedes dejar cualquier otro estilo que tengas */
+}
+
+
+.v9x16 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .play-toggle {
   position: absolute;
-  bottom: 10px; right: 10px;
+  bottom: 10px;
+  right: 10px;
   padding: 8px 12px;
   font-size: 16px;
-  background: rgba(0,0,0,.6);
+  background: rgba(0, 0, 0, 0.6);
   color: #fff;
   border: 0;
   border-radius: 999px;
