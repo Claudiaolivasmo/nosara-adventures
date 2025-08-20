@@ -1,4 +1,4 @@
-/* ======= FIX GLOBAL: usar border-box para que el padding no sume ancho ======= */
+  /* ======= FIX GLOBAL: usar border-box para que el padding no sume ancho ======= */
 *, *::before, *::after { box-sizing: border-box; }
 
 /* ======= BASE ======= */
@@ -126,49 +126,91 @@ img, video, iframe { max-width: 100%; height: auto; display: block; }
     border-radius: 8px;
   }
 
-  /* MENÚ DESPLEGABLE */
+  /* MENÚ DESPLEGABLE (panel) */
   .mobile-menu {
     position: fixed; top: 64px; left: 0; inline-size: 100%;
     background: #fff; max-height: 0; overflow: hidden; z-index: 999;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, .05);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, .12);
     transition: max-height .35s ease, visibility .35s ease;
     visibility: hidden;
   }
   .mobile-menu.open { max-height: 100vh; visibility: visible; }
-  .mobile-menu .menu-inner {
-    display: flex; flex-direction: column; gap: 1rem; padding: 1rem 1.25rem 1.25rem;
+
+  .mobile-menu .menu-inner{
+    display:flex; flex-direction:column;
+    gap:.5rem;                       /* más compacto */
+    padding:1rem 1rem 1.25rem;
+    text-align:center;               /* centra todo */
   }
+
   .mobile-menu .menu-item,
-  .mobile-menu .menu-cta {
-    display: block; text-decoration: none; font-size: 1.1rem; font-family: var(--font-title);
-    color: #0a3d62; background: transparent; border: 0; text-align: center;
-    padding: .6rem .2rem; border-radius: 10px;
+  .mobile-menu .menu-cta{
+    display:block; text-decoration:none;
+    font-size:1.2rem; font-family:var(--font-title);
+    color:#0a3d62; background:transparent; border:0;
+    padding:.6rem .5rem;             /* menor padding lateral */
+    border-radius:10px;
   }
   .mobile-menu .menu-item:hover,
-  .mobile-menu .menu-cta:hover { background: #f1f1f1; }
+  .mobile-menu .menu-cta:hover{ background:#f6f6f6; }
+
   .mobile-menu .menu-cta:focus-visible,
-  .mobile-menu .menu-item:focus-visible {
-    outline: 3px solid color-mix(in srgb, var(--accent-color) 50%, transparent);
+  .mobile-menu .menu-item:focus-visible{
+    outline:3px solid color-mix(in srgb, var(--accent-color) 50%, transparent);
+    outline-offset:2px;
   }
 
-  /* SUBMENÚ (acordeón) */
-  .mobile-menu .dropdown {
-    max-height: 0; overflow: hidden;
-    transition: max-height .3s ease, padding .3s ease, opacity .2s ease;
-    background: #fafafa; border-left: 2px solid var(--main-color);
-    margin-left: 0; padding-left: .75rem; opacity: 0; visibility: hidden;
+  /* Grupo “Book Now” centrado */
+  .menu-group{
+    display:flex; flex-direction:column; align-items:center;
+    gap:.4rem;
   }
-  .mobile-menu .dropdown.open {
-    max-height: 320px; padding: .4rem 0 .2rem .75rem; opacity: 1; visibility: visible;
-  }
-  .submenu-item {
-    display: block; padding: .5rem 0; font-size: 1.05rem;
-    color: #0a3d62; text-decoration: none; border-radius: 8px; text-align: center;
-  }
-  .submenu-item:hover { background: #f1f1f1; }
 
-  /* OVERLAY */
-  .overlay.show { opacity: 1; pointer-events: auto; visibility: visible; }
+  /* SUBMENÚ (acordeón “Book Now”) */
+  .mobile-menu .dropdown{
+    inline-size:100%;
+    max-inline-size:320px;           /* mismo ancho visual que el botón */
+    margin:0 auto; padding:0;        /* sin sangría izquierda */
+    background:transparent;          /* sin fondo gris */
+    border-left:none;                /* quita línea azul */
+
+    max-height:0; overflow:hidden;
+    opacity:0; visibility:hidden;
+    transition:max-height .3s ease, opacity .2s ease, visibility .2s ease;
+  }
+  .mobile-menu .dropdown.open{
+    max-height:320px;                /* se despliega */
+    opacity:1; visibility:visible;
+    padding:.25rem 0 0;              /* pequeño respiro arriba */
+  }
+
+  /* Botón “Book Now” centrado y con ancho controlado */
+  .mobile-menu .menu-cta{
+    inline-size:100%;
+    max-inline-size:320px;
+    margin:0 auto;                   /* centrado */
+    text-align:center;
+    font-weight:600;
+    background:#fff;
+    border:1px solid #e9ecef;
+    border-radius:10px;
+    padding:.65rem .85rem;
+    cursor:pointer;
+  }
+
+  .submenu-item{
+    display:block;
+    padding:.55rem 0;                /* altura cómoda y centrada */
+    font-size:0.85rem;
+    color:#0a3d62; text-decoration:none;
+    text-align:center; border-radius:8px;
+  }
+  .submenu-item:hover{ background:#f6f6f6; }
+
+  /* OVERLAY visible cuando el menú está abierto */
+  .overlay.show{ opacity:1; pointer-events:auto; visibility:visible; }
+}
+
 
   /* HERO móvil */
   .hero { padding: min(24vh, 9rem) 1rem 6rem; text-align: center; }
@@ -371,4 +413,4 @@ img, video, iframe { max-width: 100%; height: auto; display: block; }
 
   /* Botones flotantes */
   .floating-btn { position: fixed; inset-inline-end: 16px; bottom: 16px; }
-}
+
