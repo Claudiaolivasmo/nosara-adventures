@@ -233,12 +233,10 @@ section.frase-fija p { margin-bottom: 1rem !important; }
 }
 
 .surf-info-box {
-  /* Añade esta línea */
   padding: 6rem 2rem; 
-  /* Puedes dejar cualquier otro estilo que tengas */
 }
 
-
+/* ==== VIDEO ==== */
 .v9x16 {
   width: 100%;
   height: 100%;
@@ -257,6 +255,125 @@ section.frase-fija p { margin-bottom: 1rem !important; }
   border-radius: 999px;
   cursor: pointer;
 }
+
+/* ==== MODAL LIST ==== */
+
+/* 1) Asegúrate de tener lang="es" en <html> para guiones automáticos */
+html { word-break: normal; }
+
+/* 2) Contenedor del modal */
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;            /* .is-open => display:block o flex */
+  align-items: center;
+  justify-content: center;
+  padding: 16px;            /* respiración en móviles */
+  background: rgba(0,0,0,.55);
+  overscroll-behavior: contain;
+}
+
+/* 3) Caja del diálogo */
+.modal__dialog {
+  width: min(920px, 100%);
+  max-height: 90vh;         /* evita que crezca más que la pantalla */
+  border-radius: 14px;
+  background: #fff;
+  overflow: hidden;         /* recorta bordes redondeados */
+  box-shadow: 0 10px 40px rgba(0,0,0,.2);
+  display: flex;
+  flex-direction: column;
+}
+
+/* 4) Encabezado */
+.modal__header {
+  padding: 16px 20px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.modal__title {
+  font-size: clamp(18px, 2vw, 22px);
+  line-height: 1.2;
+  margin: 0;
+  /* claves para cortar textos largos */
+  overflow-wrap: anywhere;  /* corta cadenas largas/URLs */
+  word-break: break-word;
+  hyphens: auto;            /* guiones en palabras largas (necesita lang="es") */
+}
+
+/* 5) Cuerpo con scroll interno controlado */
+.modal__body {
+  padding: 16px 20px;
+  overflow: auto;                  /* el scroll vive aquí, no en la página */
+  -webkit-overflow-scrolling: touch;
+  max-height: calc(90vh - 56px - 64px); /* 90vh menos header y footer aprox */
+  overscroll-behavior: contain;
+  line-height: 1.5;
+}
+
+/* Texto del cuerpo: evita desbordes horizontales */
+.modal__body p,
+.modal__body li,
+.modal__body span,
+.modal__body a {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+/* Imágenes y videos dentro del modal */
+.modal__body img,
+.modal__body video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+/* Listas y bloques */
+.modal__body ul, .modal__body ol { padding-left: 1.2rem; }
+.modal__body h1, .modal__body h2, .modal__body h3 { 
+  font-size: clamp(16px, 2.2vw, 20px);
+  margin: 1em 0 .5em;
+}
+
+/* 6) Footer */
+.modal__footer {
+  padding: 14px 20px;
+  border-top: 1px solid #eee;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* 7) Botón cerrar pegado a la esquina sin mover layout */
+.modal__close {
+  margin-left: auto;
+  border: 0;
+  background: #f2f2f2;
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* 8) Evitar scroll del body cuando el modal está abierto */
+body.modal-open { overflow: hidden; }
+
+/* 9) Micro-fix iOS/Android que a veces mete scroll lateral */
+.modal__body::-webkit-scrollbar { width: 10px; }
+.modal__body::-webkit-scrollbar-thumb { background: #ddd; border-radius: 10px; }
+
+/* 10) Si tienes tarjetas/Badges con textos largos en ATV/Surf */
+.badge, .pill, .tag {
+  max-width: 100%;
+  white-space: normal;       /* NO "nowrap" */
+  overflow-wrap: anywhere;
+}
+
 
 /* ==== RECOMENDACIONES ==== */
 .recomendaciones {
