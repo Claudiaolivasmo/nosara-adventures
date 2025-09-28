@@ -1,0 +1,144 @@
+/* ============ book.css (Book Now + Policies) ============ */
+
+/* ==== BOOK NOW FORM ==== */
+.book-now h2 {
+  color: var(--main-color);
+  font-size: 2em;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+
+.booking-form {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.form-group { margin-bottom: 25px; }
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--main-color);
+  font-size: 0.9em;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+}
+
+.form-group textarea { resize: vertical; }
+
+.form-group.double {
+  display: flex;
+  gap: 20px;
+}
+.form-group.double > div { flex: 1; }
+
+.checkbox-group label {
+  display: inline-block;
+  margin-right: 20px;
+  font-weight: normal;
+}
+
+#confirmation-message {
+  display: none;
+  text-align: center;
+  padding: 40px 20px;
+  min-height: 60vh;
+}
+
+.flatpickr-calendar {
+  font-family: var(--font-text);
+  z-index: 9999;
+}
+
+.form-group input[type="checkbox"] {
+  display: inline-block;
+  width: auto;
+  margin-right: 10px;
+}
+
+.form-group label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  line-height: 1.4;
+}
+
+/* padding y max-width consistentes */
+.section.book-now {
+  padding: 4rem 1.5rem;
+  background: #fff;
+}
+.section.book-now h2 {
+  font-family: var(--font-title);
+  color: var(--main-color);
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.booking-form { max-width: 760px; margin: 0 auto; }
+.button-outline { display:block; margin: 0 auto; } /* centrado del botón */
+
+
+
+
+
+
+
+/* ==== POLICIES SECTION ==== */
+.rental-policies {
+  padding: 4rem 2rem;
+  background-color: #f9f9f9;
+  font-family: var(--font-text);
+  color: #333;
+}
+
+.policies-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  padding: 3rem 2rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+}
+
+.rental-policies h2 {
+  font-family: var(--font-title);
+  font-size: 2.5rem;
+  color: var(--main-color);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.rental-policies h3 {
+  margin-top: 2rem;
+  font-size: 1.3rem;
+  color: var(--main-color);
+}
+
+.rental-policies ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.rental-policies p {
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+  line-height: 1.6;
+}
+
+.signature-line {
+  margin-top: 2rem;
+  font-style: italic;
+  text-align: center;
+}
