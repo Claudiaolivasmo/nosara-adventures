@@ -1,1 +1,0 @@
-# nosara-adventures

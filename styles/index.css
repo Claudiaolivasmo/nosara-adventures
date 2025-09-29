@@ -90,53 +90,149 @@ section.frase-fija p { margin-bottom: 1rem !important; }
   color: #333;
 }
 
+/* ==== CONTENEDOR DE LOS CARDS ==== */
+.atv-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 2rem;
+}
+
 /* ==== RECUADRO VERTICAL PARA ATV ==== */
 .atv-info-box {
-  margin-top: 1rem;
+  flex: 1 1 350px; /* ocupa al menos 350px y crece si hay espacio */
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
 }
+
 .atv-card-vertical {
   width: 100%;
   max-width: 400px;
   background-color: #ffffff;
   padding: 25px;
+  border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
+
+.atv-card-vertical:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
 .atv-card-vertical img {
   width: 100%;
   height: auto;
   border-radius: 15px;
   margin-bottom: 20px;
 }
+
 .atv-card-vertical h2 {
   font-family: var(--font-text);
   font-size: 1.5em;
   color: var(--main-color);
   margin-bottom: 10px;
 }
+
 .atv-card-vertical .price {
   font-size: 1.5em;
   font-weight: bold;
   color: var(--main-color);
   margin-bottom: 20px;
 }
+
 .atv-card-vertical .price span {
   display: block;
   font-size: 0.8em;
   font-weight: normal;
   color: #777;
 }
-.atv-card-vertical ul {
-  list-style-type: disc;
-  padding-left: 20px;
-  text-align: left;
-  font-size: 1em;
+
+/* ==== MODALES INDIVIDUALES ==== */
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none; /* oculto por defecto */
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: flex-start;
+  z-index: 1000;
+  overflow-y: auto;
+  padding: 40px 20px;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 12px;
+  padding: 25px;
+  max-width: 550px;
+  width: 100%;
+  margin: 60px auto;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  animation: slideUp 0.35s ease;
+}
+
+.modal-content h2 {
+  font-size: 1.6em;
+  margin-bottom: 15px;
+  color: var(--main-color);
+}
+.modal-content h3 {
+  font-size: 1.2em;
+  margin-bottom: 12px;
   color: #333;
 }
-.atv-card-vertical ul li { margin-bottom: 10px; }
+.modal-content ul {
+  margin-bottom: 20px;
+  padding-left: 20px;
+}
+.modal-content ul li {
+  margin-bottom: 8px;
+  color: #444;
+}
+.modal-content a.button-outline {
+  margin-top: 10px;
+}
+
+.modal-content .close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  float: right;
+  color: #666;
+  transition: color 0.2s ease;
+}
+.modal-content .close:hover {
+  color: var(--main-color);
+}
+
+/* ==== Animaciones ==== */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slideUp {
+  from { transform: translateY(25px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* ==== Mobile ==== */
+@media (max-width: 768px) {
+  .atv-cards-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .modal-content {
+    max-width: 92%;
+    margin: 40px auto;
+  }
+}
+
 
 /* ==== SECCIÓN DE UBICACIÓN ==== */
 .location-section {

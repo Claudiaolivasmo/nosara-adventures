@@ -17,82 +17,75 @@
   <title>Nosara Adventures | ATV Rentals & Private Surf Lessons in Nosara, Costa Rica</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <!-- en <head> -->
+  <!-- CSS -->
   <link rel="stylesheet" href="styles/base.css">
   <link rel="stylesheet" href="styles/index.css">
   <link rel="stylesheet" href="styles/styles-mobile.css" media="only screen and (max-width: 1048px)" />
-
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="icon" href="images/favicon.png" type="image/png">
-
-  
 </head>
 <body>
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NGSHPMKC" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-<!-- NAV ESCRITORIO -->
-<nav class="desktop-nav">
-  <div class="main-nav-inner">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About Us</a></li>
-      <li class="nav-item nav-dropdown">
-        <button class="btn-booknow" aria-haspopup="true" aria-expanded="false">
-          Book Now <span class="chev">▾</span>
-        </button>
-        <div class="dropdown-panel" role="menu">
-          <a href="book.html" class="drop-item" role="menuitem">
-            <div class="drop-text"><span class="drop-title">Rent an ATV</span></div>
-          </a>
-          <a href="book-surf.html" class="drop-item" role="menuitem">
-            <div class="drop-text"><span class="drop-title">Private Surf Lessons</span></div>
-          </a>
-        </div>
-      </li>
-      
-    </ul>
+  <!-- NAV ESCRITORIO -->
+  <nav class="desktop-nav">
+    <div class="main-nav-inner">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li class="nav-item nav-dropdown">
+          <button class="btn-booknow" aria-haspopup="true" aria-expanded="false">
+            Book Now <span class="chev">▾</span>
+          </button>
+          <div class="dropdown-panel" role="menu">
+            <a href="book.html" class="drop-item" role="menuitem">
+              <div class="drop-text"><span class="drop-title">Rent an ATV</span></div>
+            </a>
+            <a href="book-surf.html" class="drop-item" role="menuitem">
+              <div class="drop-text"><span class="drop-title">Private Surf Lessons</span></div>
+            </a>
+          </div>
+        </li>
+      </ul>
+      <div class="logo"><a href="index.html">Nosara Adventures</a></div>
+    </div>
+  </nav>
+
+  <!-- NAV MÓVIL -->
+  <nav class="mobile-nav" aria-label="Mobile">
     <div class="logo"><a href="index.html">Nosara Adventures</a></div>
-  </div>
-</nav>
 
-<!-- NAV MÓVIL -->
-<nav class="mobile-nav" aria-label="Mobile">
-  <div class="logo"><a href="index.html">Nosara Adventures</a></div>
+    <button id="mobile-menu-button"
+            class="hamburger"
+            aria-label="Abrir menú"
+            aria-expanded="false"
+            aria-controls="mobile-menu">
+      <span class="bars" aria-hidden="true"></span>
+    </button>
 
-  <button id="mobile-menu-button"
-          class="hamburger"
-          aria-label="Abrir menú"
-          aria-expanded="false"
-          aria-controls="mobile-menu">
-    <span class="bars" aria-hidden="true"></span>
-  </button>
+    <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+      <div class="menu-inner">
+        <a href="index.html" class="menu-item">Home</a>
+        <a href="about.html" class="menu-item">About us</a>
 
-  <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
-    <div class="menu-inner">
-      <a href="index.html" class="menu-item">Home</a>
-      <a href="about.html" class="menu-item">About us</a>
-
-      <!-- Grupo Book Now -->
-      <div class="menu-group">
-        <button id="mobile-dropdown-button"
-                class="menu-cta"
-                aria-expanded="false"
-                aria-controls="mobile-dropdown-menu">
-          Book Now
-        </button>
-        <div id="mobile-dropdown-menu" class="dropdown" aria-hidden="true">
-          <a href="book.html" class="submenu-item">Rent an ATV</a>
-          <a href="book-surf.html" class="submenu-item">Private Surf Lessons</a>
+        <!-- Grupo Book Now -->
+        <div class="menu-group">
+          <button id="mobile-dropdown-button"
+                  class="menu-cta"
+                  aria-expanded="false"
+                  aria-controls="mobile-dropdown-menu">
+            Book Now
+          </button>
+          <div id="mobile-dropdown-menu" class="dropdown" aria-hidden="true">
+            <a href="book.html" class="submenu-item">Rent an ATV</a>
+            <a href="book-surf.html" class="submenu-item">Private Surf Lessons</a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div id="mobile-overlay" class="overlay" aria-hidden="true"></div>
-</nav>
-
-
+    <div id="mobile-overlay" class="overlay" aria-hidden="true"></div>
+  </nav>
 
   <!-- HERO -->
   <section class="hero" style="background-image: url('images/img-XR788L.jpeg');">
@@ -109,51 +102,71 @@
     <p class="fade-in">Nosara Adventures offers high-quality, affordable ATV rentals to explore the beaches, trails, and tropical beauty of Nosara. Whether you're here for surfing, yoga or new experiences, we’ve got the perfect ride for you.</p>
   </section>
 
-  <!-- ATV -->
-  <section id="atv" class="section atv-info-box fade-in" style="margin-top: 0;">
+  <!-- ====== CARDS DE ATVs ====== -->
+<section class="atv-cards-container">
+  <!-- Card ATV 1 -->
+  <div id="atv" class="atv-info-box fade-in">
     <div class="atv-card-vertical fade-in">
       <img src="images/img-QZ4312.jpg" alt="Kymco MXU 270i" />
       <h2>Kymco MXU 270i</h2>
-      <p class="price" style="margin-bottom: 20px;"><span>(Weekly & monthly discounts available)</span> $50 per day</p>
-      <button class="button-outline" onclick="openModal()">Details</button>
+      <p class="price">
+        $50–60 per day 
+        <span>(depending on season)</span>
+      </p>
+      <button class="button-outline" onclick="openAtvModal('kymco')">Details</button>
+    </div>
+  </div>
+
+  <!-- Card ATV 2 -->
+  <div id="atv2" class="atv-info-box fade-in">
+    <div class="atv-card-vertical fade-in">
+      <img src="images/img-TRX420FA2.jpg" alt="Honda TRX420FA2" />
+      <h2>Honda TRX420FA2</h2>
+      <p class="price">
+        $90-97 per day 
+        <span>(depending on season)</span>
+      </p>
+      <button class="button-outline" onclick="openAtvModal('trx420')">Details</button>
+    </div>
+  </div>
+</section>
+
+
+  <!-- SURF -->
+  <section id="surf" class="section surf-info-box fade-in">
+    <div class="surf-container">
+      <div class="surf-text fade-in">
+        <h2>Private Surf Lessons</h2>
+        <p>
+          Learn to ride the waves in one of Costa Rica’s top surf destinations.
+          We provide personalized lessons for first time to intermediate surfers.
+          Each session includes a surfboard, rash guard and is timed with the best tides 
+          for a safe and fun experience.
+        </p>
+        <button class="button-outline" onclick="openSurfModal()">Details</button>
+      </div>
+      <div class="surf-media fade-in" aria-label="Private Surf Lessons video">
+        <figure class="surf-video">
+          <video id="surf-video" class="v9x16" playsinline muted loop preload="metadata">
+            <source src="surf-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <button class="play-toggle" aria-controls="surf-video" aria-label="Play video">▶</button>
+        </figure>
+      </div>
     </div>
   </section>
 
-<section id="surf" class="section surf-info-box fade-in">
-  <div class="surf-container">
-    <div class="surf-text fade-in">
-      <h2>Private Surf Lessons</h2>
-      <p>
-        Learn to ride the waves in one of Costa Rica’s top surf destinations.
-        We provide personalized lessons for first time to intermediate surfers.
-        Each session includes a surfboard, rash guard and is timed with the best tides 
-        for a safe and fun experience.
-      </p>
-      <button class="button-outline" onclick="openSurfModal()">Details</button>
-    </div>
-    <div class="surf-media fade-in" aria-label="Private Surf Lessons video">
-      <figure class="surf-video">
-        <video id="surf-video" class="v9x16" playsinline muted loop preload="metadata">
-          <source src="surf-video.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        <button class="play-toggle" aria-controls="surf-video" aria-label="Play video">▶</button>
-      </figure>
-    </div>
-  </div>
-</section>
-
-  
   <!-- RECOMENDACIONES -->
   <section class="recomendaciones fade-in">
-  <div class="reco-container">
-    <div class="reco-imagen fade-in"><img id="imagen-reco" src="images/img1.jpeg" alt="ATV en Nosara"></div>
-    <div class="reco-texto fade-in center-block">
-      <h2>Dare to Experience the Magic of One of the World’s Five Blue Zones</h2>
-      <p>From enchanting beaches to the captivating dry forest, immerse yourself in a journey of well being and natural beauty.</p>
+    <div class="reco-container">
+      <div class="reco-imagen fade-in"><img id="imagen-reco" src="images/img1.jpeg" alt="ATV en Nosara"></div>
+      <div class="reco-texto fade-in center-block">
+        <h2>Dare to Experience the Magic of One of the World’s Five Blue Zones</h2>
+        <p>From enchanting beaches to the captivating dry forest, immerse yourself in a journey of well being and natural beauty.</p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- LOCATION -->
   <section class="location-section fade-in" id="location">
@@ -168,10 +181,11 @@
     </div>
   </section>
 
-  <!-- MODALES -->
-  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+  <!-- ====== MODALES INDIVIDUALES DE ATVs ====== -->
+  <!-- Modal Kymco -->
+  <div id="modal-kymco" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
     <div class="modal-content">
-      <button class="close" aria-label="Close" onclick="closeModal()">×</button>
+      <button class="close" aria-label="Close" onclick="closeAtvModal('kymco')">×</button>
       <h2 style="margin-bottom: 27px;">Reservation Details</h2>
       <h3 style="margin-bottom: 20px;">Kymco MXU 270i ATV – Key Features:</h3>
       <ul style="margin-bottom: 30px;">
@@ -181,28 +195,48 @@
         <li><strong>All-Terrain Tires:</strong> Ready for dirt, mud, and rocky trails.</li>
         <li><strong>Comfortable Ride:</strong> Ergonomic design with smooth suspension.</li>
         <li><strong>Helmet Included:</strong> Stay safe with a free helmet included.</li>
+        <li><strong>High Season (Dec–Apr):</strong> $60 per day</li>
+        <li><strong>Low Season (May–Nov):</strong> $50 per day</li>
       </ul>
       <a href="book.html" class="button-outline">Book Now</a>
     </div>
   </div>
 
-  <div id="surfModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
-  <div class="modal-content">
-    <button class="close" aria-label="Close" onclick="closeSurfModal()">×</button>
-    <h2 style="margin-bottom: 24px;">Private Surf Lessons – Details</h2>
-    <h3 style="margin-bottom: 16px;">What’s included:</h3>
-    
-    <ul style="margin-bottom: 30px;">
-      <li><strong>1:1 or 1:2 coaching</strong></li>
-      <li><strong>Board & rash guard:</strong> All equipment is included.</li>
-      <li><strong>60–90 min session:</strong> Tailored for beginner to intermediate surfers.</li>
-      <li><strong>Land warm-up & ocean safety:</strong> Learn fundamentals before hitting the waves.</li>
-    </ul>
-
-    <a href="book-surf.html" class="button-outline" onclick="trackBook('Surf','Modal')">Book Now</a>
+  <!-- Modal Honda -->
+  <div id="modal-trx420" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-content">
+      <button class="close" aria-label="Close" onclick="closeAtvModal('trx420')">×</button>
+      <h2 style="margin-bottom: 27px;">Reservation Details</h2>
+      <h3 style="margin-bottom: 20px;">Honda TRX420FA2 ATV – Key Features:</h3>
+      <ul style="margin-bottom: 30px;">
+        <li><strong>420cc Engine:</strong> Powerful performance for all types of terrain.</li>
+        <li><strong>Automatic Transmission:</strong> Smooth and easy to ride.</li>
+        <li><strong>4x4 Capability:</strong> Extra traction for mud, hills, and rough trails.</li>
+        <li><strong>Front & Rear Cargo Racks:</strong> Perfect for carrying gear or supplies.</li>
+        <li><strong>Comfortable Ride:</strong> Designed with durable suspension for stability.</li>
+        <li><strong>Helmet Included:</strong> Safety gear provided with every rental.</li>
+        <li><strong>High Season (Dec–Apr):</strong> $90 per day</li>
+        <li><strong>Low Season (May–Nov):</strong> $97 per day</li>
+      </ul>
+      <a href="book.html" class="button-outline">Book Now</a>
+    </div>
   </div>
-</div>
 
+  <!-- MODAL SURF (igual que ya tenías) -->
+  <div id="surfModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-content">
+      <button class="close" aria-label="Close" onclick="closeSurfModal()">×</button>
+      <h2 style="margin-bottom: 24px;">Private Surf Lessons – Details</h2>
+      <h3 style="margin-bottom: 16px;">What’s included:</h3>
+      <ul style="margin-bottom: 30px;">
+        <li><strong>1:1 or 1:2 coaching</strong></li>
+        <li><strong>Board & rash guard:</strong> All equipment is included.</li>
+        <li><strong>60–90 min session:</strong> Tailored for beginner to intermediate surfers.</li>
+        <li><strong>Land warm-up & ocean safety:</strong> Learn fundamentals before hitting the waves.</li>
+      </ul>
+      <a href="book-surf.html" class="button-outline" onclick="trackBook('Surf','Modal')">Book Now</a>
+    </div>
+  </div>
 
   <!-- ICONOS FLOTANTES -->
   <div class="floating-icons">
@@ -235,11 +269,52 @@
 
   <!-- SCRIPTS -->
   <script src="js/nav-mobile.js" defer></script>
-  <script defer src="js/anim-scroll.js"></script>
-  <script defer src="js/util.js"></script>
-  <script defer src="js/index.js"></script>
-  
+  <script src="js/anim-scroll.js" defer></script>
+  <script src="js/util.js" defer></script>
+  <script src="js/index.js" defer></script>
+
+  <!-- JS específico: abrir/cerrar modales por ID -->
+  <script>
+    function openAtvModal(which){
+      const id = which === 'kymco' ? 'modal-kymco' : which === 'trx420' ? 'modal-trx420' : null;
+      if(!id) return;
+      const m = document.getElementById(id);
+      if(!m) return;
+      m.style.display = 'block';
+      m.setAttribute('aria-hidden','false');
+      document.documentElement.style.overflow = 'hidden';
+      document.body.style.overflow = 'hidden';
+    }
+    function closeAtvModal(which){
+      const id = which === 'kymco' ? 'modal-kymco' : which === 'trx420' ? 'modal-trx420' : null;
+      if(!id) return;
+      const m = document.getElementById(id);
+      if(!m) return;
+      m.style.display = 'none';
+      m.setAttribute('aria-hidden','true');
+      document.documentElement.style.overflow = '';
+      document.body.style.overflow = '';
+    }
+
+    // Cerrar clic en overlay solo del modal activo
+    document.addEventListener('click', (e) => {
+      const mk = document.getElementById('modal-kymco');
+      const mh = document.getElementById('modal-trx420');
+      const isKOpen = mk && mk.style.display === 'block';
+      const isHOpen = mh && mh.style.display === 'block';
+
+      if (isKOpen && e.target === mk) closeAtvModal('kymco');
+      if (isHOpen && e.target === mh) closeAtvModal('trx420');
+    });
+
+    // Cerrar con ESC
+    document.addEventListener('keydown', (e) => {
+      if (e.key !== 'Escape') return;
+      const mk = document.getElementById('modal-kymco');
+      const mh = document.getElementById('modal-trx420');
+      if (mk && mk.style.display === 'block') closeAtvModal('kymco');
+      if (mh && mh.style.display === 'block') closeAtvModal('trx420');
+    });
+  </script>
 </body>
 </html>
-
-
