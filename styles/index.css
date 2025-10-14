@@ -151,6 +151,14 @@ section.frase-fija p { margin-bottom: 1rem !important; }
   color: #777;
 }
 
+.seasonal-rate {
+  font-size: 0.95rem;
+  color: #c4962f;
+  margin-top: -6px;
+  margin-bottom: 10px;
+}
+
+
 /* ==== MODALES INDIVIDUALES ==== */
 .modal {
   position: fixed;
