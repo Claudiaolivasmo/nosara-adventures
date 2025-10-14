@@ -94,10 +94,7 @@ img, video, iframe { max-width: 100%; height: auto; display: block; }
 }
 
 /* ======== Móvil ======== */
-/*
- * Este CSS solo debe ser cargado con la media query:
- * <link rel="stylesheet" href="styles/styles-mobile.css" media="only screen and (max-width: 1048px)" />
- */
+
 @media only screen and (max-width: 1048px) {
   /* Mostrar UI móvil y ocultar escritorio */
   .mobile-nav, .mobile-menu, .overlay { display: block; }
@@ -238,6 +235,13 @@ img, video, iframe { max-width: 100%; height: auto; display: block; }
   .atv-card-vertical h2 { font-size: 1.5rem; }
   .atv-card-vertical .price { font-size: 1.4rem; }
   .atv-card-vertical ul { font-size: .95rem; }
+
+  .seasonal-rate {
+  color: #c4962f;
+  margin-top: -6px;
+  margin-bottom: 10px;
+}
+
 
   /* SURF */
   #surf .surf-container { 
